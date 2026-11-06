@@ -54,6 +54,10 @@
         "settings": {
           "bundleName": "zprogmini.i18n.i18n"
         }
+      },
+      "" : {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/restaurant.json"
       }
     },
     "resources": {
