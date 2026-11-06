@@ -5,10 +5,10 @@
     xmlns:core="sap.ui.core">
     <Dialog title="종류별 검색">
         <List
-            items="{CategoriesData>/categories}"
+            items="{CategoriesData>/Category}"
             itemPress=".onCategorySelect">
             <StandardListItem
-                title="{CategoriesData>Category}"
+                title="{CategoriesData>name}"
                 type="Active" />
         </List>
         <endButton>
