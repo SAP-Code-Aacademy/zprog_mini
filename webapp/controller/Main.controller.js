@@ -10,14 +10,16 @@ sap.ui.define([
 
     return Controller.extend("zprogmini.controller.Main", {
         onInit() {
-           let oTest = new JSONModel();
+        // menu.json > restaurant.json으로 변경 및 
+        // 데이터 모델은 manifest.json에서 선언함 대체
+        //    let oTest = new JSONModel();
 
-            // menu.json 파일 불러오기
-            oTest.loadData("../model/menu.json");
+        //     // menu.json 파일 불러오기
+        //     oTest.loadData("../model/menu.json");
 
-            // View에 기본 모델 적용
-            this.getView().setModel(oTest);
-
+        //     // View에 기본 모델 적용
+        //     this.getView().setModel(oTest);
+        
             let oDialogModel1 = new JSONModel({
                 restaurantId: "",
                 menuId: "",
@@ -33,7 +35,7 @@ sap.ui.define([
 
             // 카테고리 모델
             let oCategoriesModel = new JSONModel();
-            oCategoriesModel.loadData(sap.ui.require.toUrl("zprogmini/model/Categories.json"));
+            oCategoriesModel.loadData(sap.ui.require.toUrl("zprogmini/model/Category.json"));
             this.getView().setModel(oCategoriesModel, "CategoriesData");
         
             let oChart = this.byId("idScopeChart");
@@ -140,7 +142,7 @@ sap.ui.define([
         onCategorySelect: function (oEvent) {
             // press면 getSource(), selectionChange면 listItem 파라미터
             let oItem = oEvent.getParameter("listItem") || oEvent.getSource();
-            let sCategory = oItem.getBindingContext("CategoriesData").getProperty("Category");
+            let sCategory = oItem.getBindingContext("CategoriesData").getProperty("name");
 
             console.log("선택한 카테고리:", sCategory);
 
@@ -150,7 +152,7 @@ sap.ui.define([
                 oBinding.filter([]);
             } else {
                 oBinding.filter([
-                    new Filter("category", FilterOperator.EQ, sCategory)
+                    new Filter("name", FilterOperator.EQ, sCategory)
                 ]);
             }
 
