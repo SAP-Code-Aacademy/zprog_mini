@@ -14,10 +14,13 @@ sap.ui.define([
 
         _MenuRiew : function(oEvent){      
             console.log("========_MenuRiew========");
-            let oModel = new JSONModel();
-            let tModel = oModel.loadData("../model/menu.json",{},false);
+            // menu.json > restaurant.json으로 변경 및 manifest.json에서 전역 데이터모델로 대체
+            // let oModel = new JSONModel();
+            // let tModel = oModel.loadData("../model/menu.json",{},false);
 
-            this.getView().getModel(tModel);
+            // this.getView().getModel(tModel);
+            // 전역 모델로 대체
+            let oModel = this.getOwnerComponent().getModel();
 
             let oId = oEvent.getParameter("arguments").paramOrder;
             let FindID = oModel.getProperty("/Restaurant");
