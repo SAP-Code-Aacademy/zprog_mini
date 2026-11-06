@@ -152,7 +152,7 @@ sap.ui.define([
                 oBinding.filter([]);
             } else {
                 oBinding.filter([
-                    new Filter("name", FilterOperator.EQ, sCategory)
+                    new Filter("category", FilterOperator.EQ, sCategory)
                 ]);
             }
 
