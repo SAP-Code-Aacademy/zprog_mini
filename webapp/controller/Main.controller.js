@@ -35,7 +35,7 @@ sap.ui.define([
 
             // 카테고리 모델
             let oCategoriesModel = new JSONModel();
-            oCategoriesModel.loadData(sap.ui.require.toUrl("zprogmini/model/Category.json"));
+            oCategoriesModel.loadData(sap.ui.require.toUrl("zprogmini/model/category.json"));
             this.getView().setModel(oCategoriesModel, "CategoriesData");
         
             let oChart = this.byId("idScopeChart");
