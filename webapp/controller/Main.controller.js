@@ -63,6 +63,7 @@ sap.ui.define([
             console.log(oContext);
             console.log(aButton);
             console.log(oId);
+            console.log(oId);
 
             // let oContext = oEvent.getParameter("listItem").getBindingContext();
             // let oObject = oContext.getObject();
