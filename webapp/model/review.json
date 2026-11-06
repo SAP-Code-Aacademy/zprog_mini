@@ -1,0 +1,134 @@
+{
+    "Review" :  [
+	    {
+              "id": "Res001",
+              "date" : "2026-02-10:12:30:43",
+              "menuId" : "짜장밥",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 4,
+              "content": "와 맛있게 먹었습니다. 이 가격이라니~",
+              "imgUrl" : "../resource/images/홍매_짜장밥.jpg"
+	    },
+        {
+              "id": "Res001",
+              "date" : "2026-06-14:13:40:23",
+              "menuId" : "삼선짬뽕",
+              "revisit" : false,
+              "waiting" : true,
+              "scope" : 2,
+              "content": "양도 많고 맛도 깔끔하나 불짬뽕인데 하나도 안매워서 아쉬웠어요",
+              "imgUrl" : "../resource/images/홍매_삼선짬뽕.jpg"
+	    },
+        {
+              "id": "Res002",
+              "date" : "2026-10-11:12:20:27",
+              "menuId" : "곰탕",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 5,
+              "content": "역시 국물은 깔끔하고 고기도 많고 맛있어요",
+              "imgUrl" : "../resource/images/금성관_곰탕.jpg"
+	    },
+        {
+              "id": "Res003",
+              "date" : "2026-04-16:12:33:57",
+              "menuId" : "김치찌개",
+              "revisit" : true,
+              "waiting" : true,
+              "scope" : 4,
+              "content": "김치찌개에 김치도 새콤매콤하고, 고기도 많이 들었습니다. 칼칼한 국물에 라면은 필수에요!",
+              "imgUrl" : "../resource/images/시골통돼지_김치찌개.jpg"
+	    },
+        {
+              "id": "Res004",
+              "date" : "2026-06-21:12:15:03",
+              "menuId" : "뼈해장국",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 3,
+              "content": "이번에 새로 뼈해장국 개시하셨다고 해서 먹어봤는데 고기 덩이가 크고 맛있어요",
+              "imgUrl" : "../resource/images/우리순대국_뼈해장국.jpg"
+	    },
+        {
+              "id": "Res004",
+              "date" : "2026-07-21:12:03:22",
+              "menuId" : "순대국",
+              "revisit" : true,
+              "waiting" : true,
+              "scope" : 4,
+              "content": "순대국 특 먹었는데 점심에 먹기 딱 좋았어요 ㅎ",
+              "imgUrl" : "../resource/images/우리순대국_순대국.jpg"
+	    },
+        {
+              "id": "Res004",
+              "date" : "2026-06-22:11:55:52",
+              "menuId" : "소머리국밥",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 5,
+              "content": "소머리국밥 국물이 진해서 맛있어요!",
+              "imgUrl" : "../resource/images/우리순대국_소머리국밥.jpg"
+	    },
+        {
+              "id": "Res002",
+              "date" : "2026-10-31:12:30:50",
+              "menuId" : "곰탕",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 5,
+              "content": "오랜만에 왔는데 여전히 맛있습니다. 국물이 진하고 고기 양이 풍성해요. 공기밥도 리필되서 든든합니다. 추운 날씨에 제격이에요",
+              "imgUrl" : "../resource/images/금성관_곰탕2.jpg"
+	    },
+        {
+              "id": "Res003",
+              "date" : "2025-12-30:13:13:27",
+              "menuId" : "김치찌개",
+              "revisit" : false,
+              "waiting" : true,
+              "scope" : 3,
+              "content": "뜨끈하고 칼칼한 돼지고기 김치찌개 맛있어요",
+              "imgUrl" : "../resource/images/시골통돼지_김치찌개2.jpg"
+    	},
+        {
+              "id": "Res005",
+              "date" : "2026-10-22:11:59:27",
+              "menuId" : "제육",
+              "revisit" : true,
+              "waiting" : true,
+              "scope" : 5,
+              "content": "제육이 맛있어요",
+              "imgUrl" : "../resource/images/백화돈_제육.jpg"
+    	},
+        {
+              "id": "Res005",
+              "date" : "2026-07-10:19:29:22",
+              "menuId" : "고기",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 3,
+              "content": "고기 다 구워주시고 고기질 자체가 좋아요.",
+              "imgUrl" : "../resource/images/백화돈_고기.jpg"
+    	},
+        {
+              "id": "Res001",
+              "date" : "2026-04-10:11:53:52",
+              "menuId" : "고기",
+              "revisit" : true,
+              "waiting" : true,
+              "scope" : 4,
+              "content": "진짜 탕수육 그냥 먹어도 넘맛있었어서 소스 거의 안 건들고 먹었어요",
+              "imgUrl" : "../resource/images/홍매_탕수육.jpg"
+    	},
+        {
+              "id": "Res004",
+              "date" : "2026-06-22:11:55:52",
+              "menuId" : "소머리국밥",
+              "revisit" : false,
+              "waiting" : false,
+              "scope" : 1,
+              "content": "",
+              "imgUrl" : "../resource/images/우리순대국_소머리국밥2.jpg"
+	    }
+    ]
+}

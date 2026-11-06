@@ -1,0 +1,7 @@
+@import url("https://cdn.jsdelivr.net/gh/fonts-archive/MaruBuri/MaruBuri.css");
+
+.myBigTitle.sapMTitle {
+    font-family: "Maru Buri", sans-serif !important;
+    font-size: 4rem !important;
+    line-height: 1.2 !important;
+}

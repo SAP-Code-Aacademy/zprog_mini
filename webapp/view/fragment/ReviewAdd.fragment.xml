@@ -1,0 +1,82 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:u="sap.ui.unified"
+>
+    <!--다이어로그 생성-->
+    <Dialog 
+        id="idDialog1"
+        title="오늘은 뭘 먹었나"
+        contentWidth="50%"
+        contentHeight="70%" >
+        <content>
+            <f:SimpleForm >
+                <f:content>
+                    <core:Title text="리뷰를 써주세요"/>
+                    <Label text="가게명"/>
+                    <ComboBox 
+                        id="idRestaurantCombo"
+                        items="{/Restaurant}"
+                        selectedKey="{dialog>/restaurantId}"
+                        selectionChange=".onRestaurantChange" >
+                        <core:Item key="{id}" text="{name}" />
+                    </ComboBox>
+                    <Label text="메뉴"/>
+                    <ComboBox
+                        id="idMenuCombo"
+                        items="{path: '/'}"
+                        selectedKey="{dialog>/menuId}">
+                        <core:Item
+                            key="{id}"
+                            text="{name}" />
+                    </ComboBox>
+                    <Label text="별점"/>
+                    <RatingIndicator id="idRI" maxValue="5" class="sapUiSmallMarginBottom" value="0" tooltip="Rating Tooltip" />
+                    <Label text="재방문의사"/>
+                    <RadioButtonGroup
+                        id="idRevisitGroup"
+                        columns="2"
+                        selectedIndex="{dialog>/revisitIndex}">
+                        <buttons>
+                            <RadioButton text="Yes"/>
+                            <RadioButton text="No"/>
+                        </buttons>
+                    </RadioButtonGroup>
+                    <Label text="방문 날짜"/>
+                    <DatePicker
+                        id="idDatePicker"
+                        value="{dialog>/Date}"
+                        valueFormat="yyyy-MM-dd"
+                        displayFormat="yyyy-MM-dd"/>
+                    <Label text="총평"/>
+                    <Input id="idReviewInput" value="{dialog>/review}"/>
+                    <Label text="웨이팅"/>
+                    <RadioButtonGroup
+                        id="idWaitingGroup"
+                        columns="2"
+                        selectedIndex="{dialog>/waitingIndex}">
+                        <buttons>
+                            <RadioButton text="Yes"/>
+                            <RadioButton text="No"/>
+                        </buttons>
+                    </RadioButtonGroup>
+                    <Label text="사진도 보여줘 ^_^"/>
+                    <u:FileUploader
+                        id="idPhotoUploader"
+                        name="photo"
+                        fileType="png,jpg,jpeg"
+                        mimeType="image/png,image/jpeg"
+                        buttonText="파일 선택"
+                        change=".onFileChange"/>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+            <!--다이어로그 닫기 버튼-->
+            
+    <buttons> <!--버튼 두개 하단오른쪽에 나란히-->
+        <Button text="저장" press="onSave" />
+        <Button text="취소" press="onCancel" />
+    </buttons>
+    </Dialog>
+</core:FragmentDefinition>

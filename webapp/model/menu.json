@@ -1,0 +1,92 @@
+{
+"Restaurant" : [ 
+        {"id" : 0,
+        "name" : "홍매",
+        "signatureMenu" : "짜장면",
+        "distance" : 0.9 ,
+        "category" : "중식",
+        "genre" : "중식당",
+        "open" : "11:00",
+        "close" : "20:30",
+        "imgUrl": "../images/홍매_가게.jpg" ,
+        "phoneNumber" :  "02-853-9898",
+        "Menu" : [
+
+            
+        ]},
+        {"id" : 1,
+        "name" : "금성관나주곰탕구로직영점",
+        "signatureMenu" : "한우나주곰탕",
+        "distance" : 0.9 ,
+        "category" : "한식",
+        "genre" : "곰탕,설렁탕",
+        "open" : "08:00",
+        "close" : "21:00",
+        "imgUrl": "../images/금성관나주곰탕_가게.jpg" ,
+        "phoneNumber" :  "0507-1377-7902",
+        "Menu" : [
+            { "id" : 10,"name" :"한우나주곰탕","price" : 13000,"imgUrl" :  "../images/금성관나주곰탕_한우나주곰탕.jpg"},
+            { "id" : 11,"name" :"나주갈비탕","price" : 18000, "imgUrl" :  "../images/금성관나주곰탕_나주갈비탕.jpg"},
+            { "id" : 12,"name" :"나주육전","price" : 22000, "imgUrl" :  "../images/금성관나주곰탕_나주육전.jpg"},
+            { "id" : 13,"name" :"한우수육한판","price" : 55000,"imgUrl" :  "../images/금성관나주곰탕_한우수육한판.jpg"},
+            { "id" : 14,"name" :"낙지한마리파전", "price" : 22000,"imgUrl" :  "../images/금성관나주곰탕_낙지한마리파전.jpg"}
+
+        ]},
+        {"id" :2 ,
+        "name" : "시골통돼지볶음서울구로점",
+        "signatureMenu" : "통돼지찌개",
+        "distance" : 0.1 ,
+        "category" : "한식",
+        "genre" : "찌개,전골",
+        "open" : "11:15",
+        "close" : "22:00",
+        "imgUrl": "../images/시골통돼지볶음서울구로점_가게.jpg" ,
+        "phoneNumber" :  "02-858-9172",
+        "Menu" : [
+            { "id" : 20,"name" :"통돼지찌개","price" : 9000,"imgUrl" : "../images/시골통돼지볶음서울구로점_통돼지찌개.jpg"},
+            { "id" : 21, "name" :"통돼지볶음","price" : 9500, "imgUrl" : "../images/시골통돼지볶음서울구로점_통돼지볶음.jpg" },
+            { "id" : 22, "name" :"삼겹살", "price" : 15000, "imgUrl" : "../images/시골통돼지볶음서울구로점_삼겹살.jpg"},
+            { "id" : 23, "name" :"목살","price" : 15000, "imgUrl" : "../images/시골통돼지볶음서울구로점_목살.jpg"},
+            { "id" : 24, "name" :"가브리살", "price" : 16000,"imgUrl" : "../images/시골통돼지볶음서울구로점_가브리살.jpg"}
+
+        ]},
+        {"id" : 3,
+        "name" : "백화돈구로본점",
+       "signatureMenu" : "한돈꽃목살",
+        "distance" : 0.9 ,
+        "category" : "한식",
+        "genre" : "육류,고기요리",
+        "open" : "11:30",
+        "close" : "23:00",
+        "imgUrl": "../images/백화돈구로본점_가게.jpg" ,
+        "phoneNumber" :  "0507-1486-0880",
+        "Menu" : [
+            { "id" : 30, "name" :"한돈꽃목살", "price" : 16000, "imgUrl" : "../images/백화돈구로본점_한돈꽃목살.jpg"},
+            { "id" : 31, "name" :"한돈특삼겹살", "price" : 16000,"imgUrl" : "../images/백화돈구로본점_한돈특삼겹살.jpg" },
+            { "id" : 32,"name" :"한돈쫄깃가브리살", "price" : 17000, "imgUrl" : "../images/백화돈구로본점_한돈쫄깃가브리살.jpg" },
+            { "id" : 33,"name" :"한돈아삭항정살","price" : 18000,"imgUrl" : "../images/백화돈구로본점_한돈아삭항정살.jpg" },
+            { "id" : 34,"name" :"한우1등급갈비살", "price" : 37000,"imgUrl" : "../images/백화돈구로본점_한우1등급갈비살.jpg"}
+
+        ]},
+        {"id" : 4,
+        "name" : "우리순대국",
+        "signatureMenu" : "순대국",
+        "distance" : 0.5 ,
+        "category" : "한식",
+        "genre" : "순대,순댓국",
+        "open" : "09:00",
+        "close" : "22:00",
+        "imgUrl": "../images/우리순대국_가게.jpg" ,
+        "phoneNumber" :  "02-830-8711",
+        "Menu" : [
+            { "id" : 40,"name" :"순대국", "price" : 9000, "imgUrl" : "../images/우리순대국_순대국.jpg"},
+            { "id" : 41,"name" :"한우소머리국밥","price" : 12000, "imgUrl" : "../images/우리순대국_한우소머리국밥.jpg"},
+            { "id" : 42,"name" :"한우우족탕","price" : 12000,"imgUrl" : "../images/우리순대국_한우우족탕.jpg"},
+            { "id" : 43, "name" :"황태해장국","price" : 8000,"imgUrl" : "../images/우리순대국_황태해장국.jpg"},
+            { "id" : 44,"name" :"뼈해장국","price" : 9000,"imgUrl" : "../images/우리순대국_뼈해장국.jpg"}
+       ]
+    }
+
+]
+}
+       

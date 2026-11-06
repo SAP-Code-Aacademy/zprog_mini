@@ -1,0 +1,19 @@
+<!-- 프레그먼트에 이름 MenuCategories.fragment.xml 파일 추가하고 아래 내용 넣어주세요 -->
+
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog title="종류별 검색">
+        <List
+            items="{CategoriesData>/categories}"
+            itemPress=".onCategorySelect">
+            <StandardListItem
+                title="{CategoriesData>Category}"
+                type="Active" />
+        </List>
+        <endButton>
+            <Button text="닫기" press=".onCloseDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
+
