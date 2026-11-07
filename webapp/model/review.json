@@ -8,7 +8,7 @@
               "waiting" : false,
               "scope" : 4,
               "content": "와 맛있게 먹었습니다. 이 가격이라니~",
-              "imgUrl" : "../resource/images/홍매_짜장밥.jpg"
+              "imgUrl" : "../images/홍매_짜장면.jpg"
 	    },
         {
               "id": 0,
@@ -18,7 +18,7 @@
               "waiting" : true,
               "scope" : 2,
               "content": "양도 많고 맛도 깔끔하나 불짬뽕인데 하나도 안매워서 아쉬웠어요",
-              "imgUrl" : "../resource/images/홍매_삼선짬뽕.jpg"
+              "imgUrl" : "../images/홍매_짬뽕.jpg"
 	    },
         {
               "id": 1,
@@ -28,7 +28,7 @@
               "waiting" : false,
               "scope" : 5,
               "content": "역시 국물은 깔끔하고 고기도 많고 맛있어요",
-              "imgUrl" : "../resource/images/금성관_곰탕.jpg"
+              "imgUrl" : "../images/금성관나주곰탕_한우나주곰탕.jpg"
 	    },
         {
               "id": 2,
@@ -38,7 +38,7 @@
               "waiting" : true,
               "scope" : 4,
               "content": "김치찌개에 김치도 새콤매콤하고, 고기도 많이 들었습니다. 칼칼한 국물에 라면은 필수에요!",
-              "imgUrl" : "../resource/images/시골통돼지_김치찌개.jpg"
+              "imgUrl" : "../images/시골통돼지볶음서울구로점_통돼지찌개.jpg"
 	    },
         {
               "id": 4,
@@ -46,9 +46,9 @@
               "menuId" : "뼈해장국",
               "revisit" : true,
               "waiting" : false,
-              "scope" : 3,
-              "content": "이번에 새로 뼈해장국 개시하셨다고 해서 먹어봤는데 고기 덩이가 크고 맛있어요",
-              "imgUrl" : "../resource/images/우리순대국_뼈해장국.jpg"
+              "scope" : 4,
+              "content": "이번에 새로 뼈해장국 개시하셨다고 해서 먹어봤는데 고기 덩이가 크고 맛있어요 다음부터는 이것만 먹을거같아요",
+              "imgUrl" : "../images/우리순대국_뼈해장국.jpg"
 	    },
         {
               "id": 4,
@@ -58,7 +58,7 @@
               "waiting" : true,
               "scope" : 4,
               "content": "순대국 특 먹었는데 점심에 먹기 딱 좋았어요 ㅎ",
-              "imgUrl" : "../resource/images/우리순대국_순대국.jpg"
+              "imgUrl" : "../images/우리순대국_순대국.jpg"
 	    },
         {
               "id": 4,
@@ -68,7 +68,7 @@
               "waiting" : false,
               "scope" : 5,
               "content": "소머리국밥 국물이 진해서 맛있어요!",
-              "imgUrl" : "../resource/images/우리순대국_소머리국밥.jpg"
+              "imgUrl" : "../images/우리순대국_한우소머리국밥.jpg"
 	    },
         {
               "id": 1,
@@ -78,7 +78,7 @@
               "waiting" : false,
               "scope" : 5,
               "content": "오랜만에 왔는데 여전히 맛있습니다. 국물이 진하고 고기 양이 풍성해요. 공기밥도 리필되서 든든합니다. 추운 날씨에 제격이에요",
-              "imgUrl" : "../resource/images/금성관_곰탕2.jpg"
+              "imgUrl" : "../images/금성관나주곰탕_한우나주곰탕.jpg"
 	    },
         {
               "id": 2,
@@ -87,8 +87,8 @@
               "revisit" : false,
               "waiting" : true,
               "scope" : 3,
-              "content": "뜨끈하고 칼칼한 돼지고기 김치찌개 맛있어요",
-              "imgUrl" : "../resource/images/시골통돼지_김치찌개2.jpg"
+              "content": "뜨끈하고 칼칼한 돼지고기 김치찌개 맛있었는데 고기양이 많이 줄어들었네요",
+              "imgUrl" : "../images/시골통돼지볶음서울구로점_통돼지찌개.jpg"
     	},
         {
               "id": 3,
@@ -98,7 +98,7 @@
               "waiting" : true,
               "scope" : 5,
               "content": "한돈꽃목살이 맛있어요",
-              "imgUrl" : "../resource/images/백화돈_제육.jpg"
+              "imgUrl" : "../images/백화돈구로본점_한돈꽃목살.jpg"
     	},
         {
               "id": 3,
@@ -108,7 +108,7 @@
               "waiting" : false,
               "scope" : 3,
               "content": "고기 다 구워주시고 고기질 자체가 좋아요.",
-              "imgUrl" : "../resource/images/백화돈_고기.jpg"
+              "imgUrl" : "../images/백화돈구로본점_한우1등급갈비살.jpg"
     	},
         {
               "id": 0,
@@ -118,17 +118,87 @@
               "waiting" : true,
               "scope" : 4,
               "content": "진짜 탕수육 그냥 먹어도 넘맛있었어서 소스 거의 안 건들고 먹었어요",
-              "imgUrl" : "../resource/images/홍매_탕수육.jpg"
+              "imgUrl" : "../images/홍매_탕수육.jpg"
     	},
         {
               "id": 4,
               "date" : "2026-06-22:11:55:52",
               "menuId" : "한우소머리국밥",
-              "revisit" : false,
+              "revisit" : true,
               "waiting" : false,
               "scope" : 1,
-              "content": "",
-              "imgUrl" : "../resource/images/우리순대국_소머리국밥2.jpg"
-	    }
+              "content": "사장님 오늘 컨디션이 많이 나쁘신듯합니다",
+              "imgUrl" : "../images/우리순대국_한우소머리국밥.jpg"
+	    },
+{
+              "id": 0,
+              "date" : "2026-06-22:11:55:52",
+              "menuId" : "군만두",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 5,
+              "content": "오늘 군만두 튀긴 정도가 말이 안나올정도로 바삭했습니다.",
+              "imgUrl" : "../images/홍매_군만두.jpg"
+	    },
+          {
+              "id": 0,
+              "date" : "2026-06-22:11:55:52",
+              "menuId" : "양장피",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 4,
+              "content": "둘이먹다가 둘 다 죽어도 모를 환상의 맛",
+              "imgUrl" : "../images/홍매_양장피.jpg"
+	    },
+          {
+              "id": 1,
+              "date" : "2026-06-22:11:55:52",
+              "menuId" : "낙지한마리파전",
+              "revisit" : false,
+              "waiting" : false,
+              "scope" : 5,
+              "content": "일단 그냥 와서 무조건 먹어보세요 말이 안됩니다 이거",
+              "imgUrl" : "../images/금성관나주곰탕_낙지한마리파전.jpg"
+	    },
+          {
+              "id": 3,
+              "date" : "2026-06-22:11:55:52",
+              "menuId" : "한돈쫄깃가브리살",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 4,
+              "content": "사장님이 구워주시다가 한점 드셨지만 맛 자체는 좋았습니다.",
+              "imgUrl" : "../images/백화돈구로본점_한돈쫄깃가브리살.jpg"
+	    },
+           {
+              "id": 2,
+              "date" : "2026-04-16:12:33:57",
+              "menuId" : "통돼지볶음",
+              "revisit" : true,
+              "waiting" : true,
+              "scope" : 5,
+              "content": "저번 통돼지찌개 한번 먹어보고 반해서 이번에는 통돼지볶음을 먹었는데 통돼지볶음이 제 입맛에 더 맞는거같아요",
+              "imgUrl" : "../images/시골통돼지볶음서울구로점_통돼지볶음.jpg"
+	    },
+           {
+              "id": 2,
+              "date" : "2026-04-16:12:33:57",
+              "menuId" : "삼겹살",
+              "revisit" : true,
+              "waiting" : true,
+              "scope" : 5,
+              "content": "보이십니까 이게 바로 삼겹살의 정석입니다 한입 먹으면 그저 와..라는 감탄사밖에 나오지 않아",
+              "imgUrl" : "../images/시골통돼지볶음서울구로점_삼겹살.jpg"
+	    },
+          {
+              "id": 3,
+              "date" : "2026-07-10:19:29:22",
+              "menuId" : "한돈아삭항정살",
+              "revisit" : true,
+              "waiting" : false,
+              "scope" : 5,
+              "content": "진짜 가서 꼭 드셔보셔야합니다. 사장님이 고기도 직접 구워주시는데 사장님이라 그런지 굽는게 말 안됩니다",
+              "imgUrl" : "../images/백화돈구로본점_한돈아삭항정살.jpg"
+    	}
     ]
 }

@@ -29,6 +29,15 @@ sap.ui.define([
             //@TODO: id 수정, ObjectPageLayout -> idObjectPageLayout으로 수정
             this.byId("ObjectPageLayout").bindElement(sPath);
 
+            //전역으로 된 review 모델 가져옴
+            let reModel = this.getOwnerComponent().getModel("review").getProperty("/Review");
+
+             let reviewFind = reModel.filter(function(sItem){
+                return sItem.id === iIndex
+             })
+             let newReview = new JSONModel(reviewFind)
+             this.getView().setModel(newReview,"detailReview");
+
         },
 
         backNav : function(){

@@ -10,15 +10,56 @@ sap.ui.define([
 
     return Controller.extend("zprogmini.controller.Main", {
         onInit() {
-        // menu.json > restaurant.json으로 변경 및 
-        // 데이터 모델은 manifest.json에서 선언함 대체
-        //    let oTest = new JSONModel();
+            //전역 모델 불러옴
+            var oRestaurantModel = this.getOwnerComponent().getModel();
+            var aRestaurant = oRestaurantModel.getProperty("/Restaurant");
+            var aReview = this.getOwnerComponent().getModel("review").getProperty("/Review");
 
-        //     // menu.json 파일 불러오기
-        //     oTest.loadData("../model/menu.json");
+            // console.log(aRestaurant);
+            // console.log(aReview);
+            //평균값 구하려고 mSum 만든 뒤 각 가게 평점 합친값 / 개수 구해옴
+            var mSum = {};
+            for (var i = 0; i < aReview.length; i++) {
+                var oReview = aReview[i];
+                //mSum에 값이 없으면 sum,count = 0으로 시작
+                if (!mSum[oReview.id]) {
+                    mSum[oReview.id] = { sum: 0, count: 0 };
+                }
+                mSum[oReview.id].sum += Number(oReview.scope);
+                mSum[oReview.id].count += 1;
+            }
+            //console.log("mSum " , mSum);
 
-        //     // View에 기본 모델 적용
-        //     this.getView().setModel(oTest);
+            var aChart = [];   // 차트용 배열
+            //평균 구하기
+            for (var j = 0; j < aRestaurant.length; j++) {
+                var oRest = aRestaurant[j];
+                var oData = mSum[oRest.id];
+                // console.log("oRest " , oRest);
+                // console.log("oData " , oData);
+
+                var fAvg = 0;
+                var iCount = 0;
+                //mSum값 있으면 소수점 첫번째 자리까지 구해서 나타냄
+                if (oData) {
+                    fAvg = Math.round((oData.sum / oData.count) * 10) / 10;
+                    iCount = oData.count;
+                }
+
+                oRestaurantModel.setProperty("/Restaurant/" + j + "/avgScope", fAvg);
+
+                //console.log(oRestaurantModel.getData());
+
+                // 차트용 데이터 추가
+                aChart.push({ name: oRest.name, scope: fAvg });
+
+                //console.log("aChart", aChart);
+            }
+
+            // 차트 전용 모델 //setModel은 모델 형식만 받아 데이터 모양 바꿈
+            this.getView().setModel(new JSONModel({ Menu: aChart }), "chart");
+            this.oRestauran = oRestaurantModel.getData();
+
         
             let oDialogModel1 = new JSONModel({
                 restaurantId: "",
@@ -253,9 +294,9 @@ sap.ui.define([
             let oSorter;
 
             if(sKey === "desc"){
-                oSorter = new Sorter("scope", true);
+                oSorter = new Sorter("avgScope", true); // scope --> 별점 평균값인 avgScope 으로 변경 oninit 함수에서 this.으로 저장 후 사용
             } else {
-                oSorter = new Sorter("scope", false);
+                oSorter = new Sorter("avgScope", false);
             };
 
             oBinding.sort(oSorter);

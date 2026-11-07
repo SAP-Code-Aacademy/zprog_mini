@@ -89,7 +89,7 @@
 									<Text text="{name}" />
 									<Text text="{category}" />
 									<Text text="{signatureMenu}" />
-									<Text text="" />
+									<Text text="{avgScope}" />
 									<Text text="{distance}" />
 									<Button press="onNavDetail" icon="sap-icon://sys-help-2" type="Emphasized"/>
 								</cells>
@@ -99,12 +99,12 @@
 					<viz:VizFrame id="idScopeChart" vizType="stacked_bar" width="50%" height="300px"
 						uiConfig="{applicationSet:'fiori'}">
 						<viz:dataset>
-							<viz.data:FlattenedDataset data="{/Menu}">
+							<viz.data:FlattenedDataset data="{chart>/Menu}">
 								<viz.data:dimensions>
-									<viz.data:DimensionDefinition name="상호명" value="{name}" />
+									<viz.data:DimensionDefinition name="상호명" value="{chart>name}" />
 								</viz.data:dimensions>
 								<viz.data:measures>
-									<viz.data:MeasureDefinition name="별점" value="{scope}" />
+									<viz.data:MeasureDefinition name="별점" value="{chart>scope}" />
 								</viz.data:measures>
 							</viz.data:FlattenedDataset>
 						</viz:dataset>

@@ -294,52 +294,51 @@
 
 
                                 <!-- 오른쪽 : 리뷰 / 별점 -->
-                                <m:Panel
-                                    class="reviewSummaryPanel">
+                                <m:Panel class="reviewSummaryPanel">
 
-                                    <m:VBox
-                                        alignItems="Center">
+                                    <m:VBox>
 
-                                        <m:Title
-                                            text="리뷰"
-                                            level="H2"/>
-
-                                        <m:Text
-                                            class="ratingScore"
-                                            text="4.5"/>
-
-                                        <m:HBox class="starRow">
-
-                                            <!-- <m:Icon
-                                                src="sap-icon://favorite"
-                                                class="starIcon"/>
-
-                                            <m:Icon
-                                                src="sap-icon://favorite"
-                                                class="starIcon"/>
-
-                                            <m:Icon
-                                                src="sap-icon://favorite"
-                                                class="starIcon"/>
-
-                                            <m:Icon
-                                                src="sap-icon://favorite"
-                                                class="starIcon"/>
-
-                                            <m:Icon
-                                                src="sap-icon://favorite"
-                                                class="starIcon"/> -->
-
+                                        <!-- 헤더 -->
+                                        <m:HBox alignItems="Center" class="summaryHeader">
+                                            <core:Icon src="sap-icon://thumb-up" color="#E6A100" size="1.25rem"/>
+                                            <m:Title text="대표 리뷰" level="H4" class="summaryTitle"/>
                                         </m:HBox>
+                                        <m:Text text="만점(5점)을 받은 리뷰예요" class="summarySubText"/>
 
-                                        <m:Text
-                                            class="reviewCount"
-                                            text="리뷰 128개"/>
+                                        <!-- 5점 리뷰 목록 -->
+                                        <m:List
+                                            items="{
+                                                path: 'detailReview>/',
+                                                filters: [{ path: 'scope', operator: 'GE', value1: 4 }]
+                                            }"
+                                            showSeparators="None"
+                                            backgroundDesign="Transparent"
+                                            noDataText="아직 만점 리뷰가 없습니다">
 
-                                        <m:Button
-                                            text="리뷰 보러가기"
-                                            type="Emphasized"
-                                            class="reviewButton"/>
+                                            <m:CustomListItem class="summaryCard">
+                                                <m:VBox class="summaryCardInner">
+
+                                                    <!-- 메뉴명 + 별점 -->
+                                                    <m:HBox justifyContent="SpaceBetween" alignItems="Center">
+                                                        <m:Text text="{detailReview>menuId}" class="summaryMenu"/>
+                                                        <m:RatingIndicator
+                                                            value="{detailReview>scope}"
+                                                            maxValue="5"
+                                                            iconSize="0.9rem"
+                                                            editable="false"/>
+                                                    </m:HBox>
+
+                                                    <!-- 리뷰 내용 (비어 있으면 숨김) -->
+                                                    <m:Text
+                                                        text="{detailReview>content}"
+                                                        visible="{= !!${detailReview>content} }"
+                                                        wrapping="true"
+                                                        class="summaryText"/>
+
+                                                </m:VBox>
+                                            </m:CustomListItem>
+
+                                        </m:List>
 
                                     </m:VBox>
 
@@ -400,14 +399,14 @@
                                     hSpacing="1"
                                     vSpacing="1"
                                     width="100%"
-                                    content="{Menu>/Menu}">
+                                    content="{Menu}">
 
                                     <m:VBox
                                         class="menuCard">
 
                                         <!-- 음식 이미지 -->
                                         <m:Image
-                                            src="{Menu>imgUrl}"
+                                            src="{imgUrl}"
                                             width="100%"
                                             height="160px"
                                             densityAware="false"/>
@@ -415,14 +414,14 @@
 
                                         <!-- 메뉴 이름 -->
                                         <m:Title
-                                            text="{Menu>name}"
+                                            text="{name}"
                                             level="H3"
                                             class="menuName"/>
 
 
                                         <!-- 가격 -->
                                         <m:Title
-                                            text="{Menu>price}"
+                                            text="{price}원"
                                             level="H3"
                                             class="menuPrice"/>
 
@@ -462,89 +461,67 @@
                                 width="100%"
                                 justifyContent="SpaceBetween">
 
-
-                                <!-- 리뷰 점수 -->
-                                <m:VBox
-                                    width="30%"
-                                    class="reviewSummaryPanel">
-
-                                    <m:Title
-                                        text="리뷰 요약"
-                                        level="H2"/>
-
-                                    <m:HBox
-                                        alignItems="Center"
-                                        class="ratingArea">
-
-                                        <core:Icon
-                                            src="sap-icon://favorite"
-                                            size="40px"
-                                            color="#FFD400"/>
-
-                                        <m:Title
-                                            text="{Menu>/scope}"
-                                            level="H1"/>
-
-                                        <m:Text
-                                            text=" / 5.0"/>
-
-                                    </m:HBox>
-
-                                </m:VBox>
-
-
-                                <!-- 리뷰 내용 -->
-                                <m:VBox
-                                    width="65%"
-                                    class="reviewContentPanel">
+                                <m:VBox width="65%" class="reviewContentPanel">
 
                                     <m:List
-                                        items="{Menu>/_review}">
+                                        items="{detailReview>/}"
+                                        showSeparators="None"
+                                        backgroundDesign="Transparent"
+                                        noDataText="아직 작성된 리뷰가 없습니다">
 
-                                        <m:CustomListItem>
+                                        <m:CustomListItem class="reviewCard">
+                                            <m:VBox class="reviewItem">
 
-                                            <m:VBox
-                                                class="reviewItem">
+                                                <!-- 상단: 메뉴명 + 날짜 -->
+                                                <m:HBox justifyContent="SpaceBetween" alignItems="Center">
+                                                    <m:Title text="{review>menuId}" level="H4" class="reviewMenuTitle"/>
+                                                    <m:Text text="{= ${detailReview>date}.substring(0, 10) }" class="reviewDate"/>
+                                                </m:HBox>
 
-                                                <m:HBox
-                                                    justifyContent="SpaceBetween">
+                                                <!-- 별점 + 점수 -->
+                                                <m:HBox alignItems="Center" class="reviewRatingRow">
+                                                    <m:RatingIndicator
+                                                        value="{detailReview>scope}"
+                                                        maxValue="5"
+                                                        iconSize="1rem"
+                                                        editable="false"/>
+                                                    <m:Text text="{detailReview>scope} / 5" class="reviewScore"/>
+                                                </m:HBox>
 
-                                                    <m:Title
-                                                        text="맛집 리뷰"
-                                                        level="H4"/>
-
+                                                <!-- 태그: 재방문 / 웨이팅 -->
+                                                <m:HBox class="reviewTagRow">
                                                     <m:ObjectStatus
-                                                        text="{Menu>Waiting}"
-                                                        state="None"/>
-
+                                                        text="{= ${detailReview>revisit} ? '재방문 의사 있음' : '재방문 의사 없음' }"
+                                                        state="{= ${detailReview>revisit} ? 'Success' : 'Error' }"
+                                                        inverted="true"
+                                                        class="reviewTag"/>
+                                                    <m:ObjectStatus
+                                                        text="{= ${detailReview>waiting} ? '웨이팅 있음' : '웨이팅 없음' }"
+                                                        state="{= ${detailReview>waiting} ? 'Warning' : 'Information' }"
+                                                        inverted="true"
+                                                        class="reviewTag"/>
                                                 </m:HBox>
 
+                                                <!-- 사진 (이미지 경로가 있을 때만 표시) -->
+                                                <m:Image
+                                                    src="{detailReview>imgUrl}"
+                                                    visible="{= !!${detailReview>imgUrl} }"
+                                                    width="50%"
+                                                    height="180px"
+                                                    densityAware="false"
+                                                    class="reviewImage"/>
 
-                                                <m:HBox
-                                                    alignItems="Center">
-
-                                                    <core:Icon
-                                                        src="sap-icon://favorite"
-                                                        color="#FFD400"/>
-
-                                                    <m:Text
-                                                        text="{Menu>/scope}"
-                                                        class="reviewScore"/>
-
-                                                </m:HBox>
-
-
+                                                <!-- 리뷰 내용 (비어 있으면 숨김) -->
                                                 <m:Text
-                                                    text="{Menu>review}"
+                                                    text="{detailReview>content}"
+                                                    visible="{= !!${detailReview>content} }"
                                                     wrapping="true"
                                                     class="reviewText"/>
 
                                             </m:VBox>
-
                                         </m:CustomListItem>
 
                                     </m:List>
-
                                 </m:VBox>
 
                             </m:HBox>
