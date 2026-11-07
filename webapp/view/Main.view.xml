@@ -84,7 +84,6 @@
 							<ColumnListItem vAlign="Middle">
 								<cells>
 									<c:Icon src="sap-icon://add-favorite"
-											color="#FFFF36"
 											press=".onFavorite"/>
 									<Text text="{name}" />
 									<Text text="{category}" />

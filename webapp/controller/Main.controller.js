@@ -293,6 +293,16 @@ sap.ui.define([
             //테이블에 리스트 적용
             oTableList.getBinding("items").filter(oFilter);  
 
+        },
+        onFavorite:function(oEvent) {
+            let oIcon = oEvent.getSource();
+            let oSrc = oIcon.getSrc();
+
+            if(oSrc === "sap-icon://add-favorite") {
+                oIcon.setSrc("sap-icon://favorite");
+            } else  {
+                oIcon.setSrc("sap-icon://add-favorite");
+            };
         }
         
     });
