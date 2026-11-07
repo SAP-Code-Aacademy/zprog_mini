@@ -185,14 +185,15 @@ sap.ui.define([
             let oModel = this.getView().getModel();
             let oData = this.getView().getModel("dialog").getData();
 
-            // 기존 Review 배열 가져오기
-            let aReview = oModel.getProperty("/Review");
+            // 기존 Review 배열 가져오기 / 빈값이면 빈 배열로 시
+            let aReview = oModel.getProperty("/Review") || [];
 
             // 새로운 Review 객체 만들기
             let oNewReview = {
-                id: Math.max(0, ...aReview.map(item => item.id)) + 1,
+                // id: Math.max(0, ...aReview.map(item => item.id)) + 1,
+                id : oData.id, //가져온 레스토랑 메뉴 id로 저장 변경
                 date: oData.Date,
-                menuId: Number(oData.menuId),
+                menuId: oData.menuId,
                 revisit: oData.revisitIndex === 0,
                 waiting: oData.waitingIndex === 0,
                 scope: Number(oData.scope),
