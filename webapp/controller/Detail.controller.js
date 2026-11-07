@@ -5,9 +5,6 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("zprogmini.controller.Detail", {
-        _bindElements(){
-            this.byId("idObjectPageLayout").bindElement();
-        },
         onInit() {
             const oRouter = this.getOwnerComponent().getRouter();
 
@@ -26,7 +23,8 @@ sap.ui.define([
             );
 
 
-            this_bindElements();
+            const sPath = `/Restaurant/${iIndex}`
+            this.byId("idObjectPageLayout").bindElement(sPath);
         },
 
         backNav : function(){
