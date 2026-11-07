@@ -8,10 +8,14 @@
         "genre" : "중식당",
         "open" : "11:00",
         "close" : "20:30",
-        "imgUrl": "../images/홍매_가게.jpg" ,
+        "imgUrl": "../images/홍매_가게사진.jpg" ,
         "phoneNumber" :  "02-853-9898",
         "Menu" : [
-
+            { "id" : 0, "name" :"짜장면", "price" : 7000, "imgUrl" : "../images/홍매_짜장면.jpg"},
+            { "id" : 1, "name" :"짬뽕","price" : 8000, "imgUrl" : "../images/홍매_짬뽕.jpg"},
+            { "id" : 2, "name" :"군만두 5개","price" : 2000,"imgUrl" : "../images/홍매_군만두.jpg"},
+            { "id" : 3, "name" :"등심탕수육(소)","price" : 23000,"imgUrl" : "../images/홍매_탕수육.jpg"},
+            { "id" : 4, "name" :"양장피","price" : 30000,"imgUrl" : "../images/홍매_양장피.jpg" }
             
         ]},
         {"id" : 1,

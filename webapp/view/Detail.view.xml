@@ -254,47 +254,34 @@
                                     <m:HBox
                                         class="infoDetailRow">
 
-                                        <m:Label text="카테고리"/>
-                                        <m:Text text="{Menu>Category}"/>
+                                        <m:Label text="카테고리 : "/>
+                                        <m:Text text=" {Menu>/category}"/>
 
                                     </m:HBox>
 
 
-                                    <m:HBox
+                                    <!-- <m:HBox
                                         class="infoDetailRow">
 
                                         <m:Label text="음식 종류"/>
                                         <m:Text text="{Menu>menuGenre}"/>
 
-                                    </m:HBox>
+                                    </m:HBox> -->
 
 
                                     <m:HBox
                                         class="infoDetailRow">
 
-                                        <m:Label text="대표 메뉴"/>
+                                        <m:Label text="대표 음식 : "/>
                                         <m:Text
-                                            text="{Menu>/_review/0/menuName}"/>
-
+                                            text=" {Menu>/signatureMenu}"/>
                                     </m:HBox>
-
 
                                     <m:HBox
                                         class="infoDetailRow">
 
-                                        <m:Label text="거리"/>
-                                        <m:Text
-                                            text="{Menu>distance}m"/>
-
-                                    </m:HBox>
-
-
-                                    <m:HBox
-                                        class="infoDetailRow">
-
-                                        <m:Label text="영업시간"/>
-                                        <m:Text
-                                            text="{Menu>/_review/0/open}"/>
+                                        <m:Label text="대표 이미지 "/>
+                                        <m:Image src=" {Menu>/imgUrl}" width="300px" height="200px"/>
 
                                     </m:HBox>
 
@@ -302,9 +289,29 @@
                                     <m:HBox
                                         class="infoDetailRow">
 
-                                        <m:Label text="전화번호"/>
+                                        <m:Label text="거리 : "/>
                                         <m:Text
-                                            text="{Menu>/_review/0/number}"/>
+                                            text=" {Menu>/distance}m"/>
+
+                                    </m:HBox>
+
+
+                                    <m:HBox
+                                        class="infoDetailRow">
+
+                                        <m:Label text="영업시간 : "/>
+                                        <m:Text
+                                            text=" {Menu>/open}~{Menu>/close}"/>
+
+                                    </m:HBox>
+
+
+                                    <m:HBox
+                                        class="infoDetailRow">
+
+                                        <m:Label text="전화번호 : "/>
+                                        <m:Text
+                                            text=" {Menu>/phoneNumber}"/>
 
                                     </m:HBox>
 
@@ -364,14 +371,14 @@
                                     hSpacing="1"
                                     vSpacing="1"
                                     width="100%"
-                                    content="{Menu>/_review}">
+                                    content="{Menu>/Menu}">
 
                                     <m:VBox
                                         class="menuCard">
 
                                         <!-- 음식 이미지 -->
                                         <m:Image
-                                            src="{Menu>image}"
+                                            src="{Menu>imgUrl}"
                                             width="100%"
                                             height="160px"
                                             densityAware="false"/>
@@ -379,7 +386,7 @@
 
                                         <!-- 메뉴 이름 -->
                                         <m:Title
-                                            text="{Menu>menuName}"
+                                            text="{Menu>name}"
                                             level="H3"
                                             class="menuName"/>
 
