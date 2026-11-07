@@ -11,6 +11,7 @@
         id="ObjectPageLayout"
         showTitleInHeaderContent="true"
         useIconTabBar="true"
+        class="customObjectPage border"
         upperCaseAnchorBar="false"
         showAnchorBar="true"
         enableLazyLoading="false">
@@ -19,12 +20,13 @@
         <!-- 상단 제목 -->
         <!-- ================================================== -->
 
+        
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
 
                 <expandedHeading>
                     <m:HBox alignItems="Center">
-
+                        <core:Icon src="sap-icon://home"/>
                         <m:Button
                             icon="sap-icon://nav-back"
                             type="Transparent"
