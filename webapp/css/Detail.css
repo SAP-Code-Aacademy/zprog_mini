@@ -1,0 +1,23 @@
+/* detail  파일에서 사용할 CSS */
+
+/* background 색 테스트 용 */
+.red {
+    background-color: red;
+}
+
+/* 보더 영역 표시 테스트용 */
+.border {
+    border: 1px solid red;
+}
+/* Detail Page ObjectPageLayout IconBar에 아이콘 추가용*/
+.customObjectPage .sapMITHTextContent::before {
+    font-family: "SAP-icons";
+    content: "\e070";
+    margin-right: 8px;
+    font-size: 32px;
+    color: red;
+}
+
+.customObjectPage .sapMITBFilter:nth-child(2) .sapMITHTextContent::before {
+    content: "\e0b1";
+}

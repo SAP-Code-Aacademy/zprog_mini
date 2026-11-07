@@ -6,18 +6,3 @@
     line-height: 1.2 !important;
 }
 
-.red {
-    background-color: red;
-}
-
-.border {
-    border: 1px solid red;
-}
-
-.customObjectPage .sapMITHTextContent::before {
-    font-family: "SAP-icons";
-    content: "\e070";
-    margin-right: 8px;
-    font-size: 32px;
-    color: red;
-}
