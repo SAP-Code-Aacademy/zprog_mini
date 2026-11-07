@@ -270,9 +270,9 @@ sap.ui.define([
             let oDistance;
             
             if(sKey1 === "Dasc"){
-                oDistance = new Sorter("distance", false);
-            } else {
                 oDistance = new Sorter("distance", true);
+            } else {
+                oDistance = new Sorter("distance", false);
             };
             
             oBinding1.sort(oDistance);
