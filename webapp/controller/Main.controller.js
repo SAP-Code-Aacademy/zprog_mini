@@ -303,6 +303,12 @@ sap.ui.define([
             } else  {
                 oIcon.setSrc("sap-icon://add-favorite");
             };
+        },
+        onReset:function() {
+            let oTable = this.byId("idProductsTable");
+            let oBinding = oTable.getBinding("items");
+
+            oBinding.sort(null);
         }
         
     });

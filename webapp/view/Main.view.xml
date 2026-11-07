@@ -31,8 +31,9 @@
 								<Input width="15%" id="listId"/>
 								<Button text="검색" press="listFind"/>
 								<ToolbarSpacer/>
-								<Button text="추가" type="Emphasized" press="onAdd"/>
-								<Button text="삭제" type="Reject" press="onDelete"/>
+								<Button text="추가" type="Emphasized" press=".onAdd"/>
+								<Button text="삭제" type="Reject" press=".onDelete"/>
+								<Button text="정렬 초기화" press=".onReset"/>
 							</Toolbar>
 						</headerToolbar>
 						<columns>
