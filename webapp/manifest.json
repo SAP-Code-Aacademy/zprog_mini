@@ -61,7 +61,11 @@
       "" : {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/restaurant.json"
-      }
+      },
+      "review" : {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/review.json"
+      }j
     },
     "resources": {
       "css": [

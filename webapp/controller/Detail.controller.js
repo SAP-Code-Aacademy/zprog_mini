@@ -5,39 +5,28 @@ sap.ui.define([
     "use strict";
 
     return Controller.extend("zprogmini.controller.Detail", {
+        _bindElements(){
+            this.byId("idObjectPageLayout").bindElement();
+        },
         onInit() {
             const oRouter = this.getOwnerComponent().getRouter();
 
             oRouter.getRoute("RouteDetail")
-            .attachPatternMatched(this._MenuRiew, this);
+            .attachPatternMatched(this._onPatternMatched, this);
         },
 
-        _MenuRiew : function(oEvent){      
-            console.log("========_MenuRiew========");
-            // menu.json > restaurant.json으로 변경 및 manifest.json에서 전역 데이터모델로 대체
-            // let oModel = new JSONModel();
-            // let tModel = oModel.loadData("../model/menu.json",{},false);
+        _onPatternMatched : function(oEvent){      
+            const oModel = this.getOwnerComponent().getModel();
 
-            // this.getView().getModel(tModel);
-            // 전역 모델로 대체
-            let oModel = this.getOwnerComponent().getModel();
+            const sRestaurantId = +oEvent.getParameter("arguments").paramOrder;
+            const aRestaurants = oModel.getProperty("/Restaurant");
 
-            let oId = oEvent.getParameter("arguments").paramOrder;
-            let FindID = oModel.getProperty("/Restaurant");
+            const iIndex = aRestaurants.findIndex(
+                 (oItem) => oItem.id === sRestaurantId
+            );
 
-            console.log(oId);
-            console.log(FindID);
 
-            let IdFind = FindID.find(function(oItem){
-                console.log(oItem.id);
-                return oItem.id == oId;
-            })
-
-            console.log(IdFind);
-
-            let sModel = new JSONModel(IdFind);
-            this.getView().setModel(sModel,"Menu");
-
+            this_bindElements();
         },
 
         backNav : function(){
