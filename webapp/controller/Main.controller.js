@@ -144,7 +144,7 @@ sap.ui.define([
 
         onRandom: function () {
             // Menu.json 데이터 가져오기
-            var aMenu = this.getView().getModel().getProperty("/Menu");
+            var aMenu = this.getView().getModel().getProperty("/Restaurant"); //점메추 가져오는 property 이름 변경 menu -> Restaurant
 
             if (!aMenu || aMenu.length === 0) {
                 sap.m.MessageToast.show("뽑을 맛집이 없어요!");
