@@ -241,83 +241,111 @@
 
                         <blocks>
 
-                            <m:Panel
-                                class="infoPanel">
+                            <m:HBox
+                                class="infoReviewContainer"
+                                justifyContent="SpaceBetween"
+                                width="100%">
 
-                                <m:VBox>
+                                <!-- 왼쪽 : 가게 정보 -->
+                                <m:Panel
+                                    class="infoPanel">
 
-                                    <m:Title
-                                        text="가게 기본 정보"
-                                        level="H2"/>
+                                    <m:VBox>
+
+                                        <m:Title
+                                            text="가게 기본 정보"
+                                            level="H2"/>
+
+                                        <m:HBox class="infoDetailRow">
+                                            <m:Label text="카테고리 : "/>
+                                            <m:Text text="{category}"/>
+                                        </m:HBox>
+
+                                        <m:HBox class="infoDetailRow">
+                                            <m:Label text="대표 음식 : "/>
+                                            <m:Text text="{signatureMenu}"/>
+                                        </m:HBox>
+
+                                        <m:HBox class="infoDetailRow imageRow">
+                                            <m:Image
+                                                src="{imgUrl}"
+                                                width="300px"
+                                                height="200px"/>
+                                        </m:HBox>
+
+                                        <m:HBox class="infoDetailRow">
+                                            <m:Label text="거리 : "/>
+                                            <m:Text text="{distance}km"/>
+                                        </m:HBox>
+
+                                        <m:HBox class="infoDetailRow">
+                                            <m:Label text="영업시간 : "/>
+                                            <m:Text text="{open} ~ {close}"/>
+                                        </m:HBox>
+
+                                        <m:HBox class="infoDetailRow">
+                                            <m:Label text="전화번호 : "/>
+                                            <m:Text text="{phoneNumber}"/>
+                                        </m:HBox>
+
+                                    </m:VBox>
+
+                                </m:Panel>
 
 
-                                    <m:HBox
-                                        class="infoDetailRow">
+                                <!-- 오른쪽 : 리뷰 / 별점 -->
+                                <m:Panel
+                                    class="reviewSummaryPanel">
 
-                                        <m:Label text="카테고리 : "/>
-                                        <m:Text text=" {Menu>/category}"/>
+                                    <m:VBox
+                                        alignItems="Center">
 
-                                    </m:HBox>
+                                        <m:Title
+                                            text="리뷰"
+                                            level="H2"/>
 
-
-                                    <!-- <m:HBox
-                                        class="infoDetailRow">
-
-                                        <m:Label text="음식 종류"/>
-                                        <m:Text text="{Menu>menuGenre}"/>
-
-                                    </m:HBox> -->
-
-
-                                    <m:HBox
-                                        class="infoDetailRow">
-
-                                        <m:Label text="대표 음식 : "/>
                                         <m:Text
-                                            text=" {Menu>/signatureMenu}"/>
-                                    </m:HBox>
+                                            class="ratingScore"
+                                            text="4.5"/>
 
-                                    <m:HBox
-                                        class="infoDetailRow">
+                                        <m:HBox class="starRow">
 
-                                        <m:Label text="대표 이미지 "/>
-                                        <m:Image src=" {Menu>/imgUrl}" width="300px" height="200px"/>
+                                            <!-- <m:Icon
+                                                src="sap-icon://favorite"
+                                                class="starIcon"/>
 
-                                    </m:HBox>
+                                            <m:Icon
+                                                src="sap-icon://favorite"
+                                                class="starIcon"/>
 
+                                            <m:Icon
+                                                src="sap-icon://favorite"
+                                                class="starIcon"/>
 
-                                    <m:HBox
-                                        class="infoDetailRow">
+                                            <m:Icon
+                                                src="sap-icon://favorite"
+                                                class="starIcon"/>
 
-                                        <m:Label text="거리 : "/>
+                                            <m:Icon
+                                                src="sap-icon://favorite"
+                                                class="starIcon"/> -->
+
+                                        </m:HBox>
+
                                         <m:Text
-                                            text=" {Menu>/distance}m"/>
+                                            class="reviewCount"
+                                            text="리뷰 128개"/>
 
-                                    </m:HBox>
+                                        <m:Button
+                                            text="리뷰 보러가기"
+                                            type="Emphasized"
+                                            class="reviewButton"/>
 
+                                    </m:VBox>
 
-                                    <m:HBox
-                                        class="infoDetailRow">
+                                </m:Panel>
 
-                                        <m:Label text="영업시간 : "/>
-                                        <m:Text
-                                            text=" {Menu>/open}~{Menu>/close}"/>
-
-                                    </m:HBox>
-
-
-                                    <m:HBox
-                                        class="infoDetailRow">
-
-                                        <m:Label text="전화번호 : "/>
-                                        <m:Text
-                                            text=" {Menu>/phoneNumber}"/>
-
-                                    </m:HBox>
-
-                                </m:VBox>
-
-                            </m:Panel>
+                            </m:HBox>
 
                         </blocks>
 
@@ -326,6 +354,7 @@
                 </subSections>
 
             </ObjectPageSection>
+
 
 
             <!-- ================================================== -->

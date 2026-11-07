@@ -6,3 +6,117 @@
     line-height: 1.2 !important;
 }
 
+.imageRow {
+    justify-content: center;
+    padding: 24px 0 !important;
+}
+
+.imageRow .sapMImage {
+    width: 300px !important;
+    height: 200px !important;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.infoPanel {
+    width: 100%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 !important;
+
+    border: 1px solid #e5e7eb !important;
+    border-radius: 16px !important;
+
+    background: #ffffff !important;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06) !important;
+
+    overflow: hidden;
+}
+
+
+/* 카드 내부 */
+.infoPanel .sapMVBox {
+    padding: 28px 32px;
+}
+
+
+/* "가게 기본 정보" 제목 */
+.infoPanel .sapMTitle {
+    margin-bottom: 24px;
+
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: #222 !important;
+}
+
+
+/* 각각의 정보 한 줄 */
+.infoDetailRow {
+    display: flex;
+    align-items: center;
+
+    min-height: 48px;
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid #f0f0f0;
+}
+
+
+/* 마지막 줄은 밑줄 제거 */
+.infoDetailRow:last-child {
+    border-bottom: none;
+}
+
+
+/* 왼쪽 Label */
+.infoDetailRow .sapMLabel {
+    width: 120px !important;
+
+    font-size: 15px !important;
+    font-weight: 600 !important;
+
+    color: #777 !important;
+
+    flex-shrink: 0;
+}
+
+
+/* 오른쪽 Text */
+.infoDetailRow .sapMText {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+
+    color: #222 !important;
+}
+
+
+/* 대표 이미지가 들어있는 Row */
+.infoDetailRow:has(.sapMImage) {
+    justify-content: center;
+
+    padding: 24px 0;
+}
+
+
+/* 대표 이미지 */
+.infoPanel .sapMImage {
+    display: block;
+
+    width: 300px !important;
+    height: 200px !important;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+
+/* 마우스를 올렸을 때 */
+.infoDetailRow:not(:has(.sapMImage)):hover {
+    background-color: #fafafa;
+}

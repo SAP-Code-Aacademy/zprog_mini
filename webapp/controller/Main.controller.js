@@ -65,9 +65,6 @@ sap.ui.define([
             console.log(oContext);
             console.log(aButton);
             console.log(oId);
-            console.log(oId);
-            console.log(oId);
-            console.log(oId);
 
             // let oContext = oEvent.getParameter("listItem").getBindingContext();
             // let oObject = oContext.getObject();
@@ -234,7 +231,7 @@ sap.ui.define([
             // 선택한 행의 데이터 경로 가져오기
             let oContext = oSelectedItem.getBindingContext();
             let oModel = this.getView().getModel();
-            let aMenu = oModel.getProperty("/Restaurant");
+            let aMenu = oModel.getProperty("/Restaurant"); //Menu -> Restaurant
 
             // 배열에서 해당 데이터의 인덱스 추출
             let iIndex = Number(this.DeletePath.split("/").pop());

@@ -13,15 +13,17 @@ sap.ui.define([
         },
 
         _onPatternMatched : function(oEvent){      
+            console.log("==========_onPatternMatched==========");
             const oModel = this.getOwnerComponent().getModel();
 
-            const sRestaurantId = +oEvent.getParameter("arguments").paramOrder;
+            const sRestaurantId = oEvent.getParameter("arguments").paramOrder;
             const aRestaurants = oModel.getProperty("/Restaurant");
 
-            const iIndex = aRestaurants.findIndex(
-                 (oItem) => oItem.id === sRestaurantId
-            );
+            const iRestaurantId = Number(sRestaurantId);
 
+            const iIndex = aRestaurants.findIndex(
+                 (oItem) => oItem.id === iRestaurantId
+            );
 
             const sPath = `/Restaurant/${iIndex}`
             //@TODO: id 수정, ObjectPageLayout -> idObjectPageLayout으로 수정
