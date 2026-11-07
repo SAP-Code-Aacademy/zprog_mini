@@ -24,7 +24,9 @@ sap.ui.define([
 
 
             const sPath = `/Restaurant/${iIndex}`
-            this.byId("idObjectPageLayout").bindElement(sPath);
+            //@TODO: id 수정, ObjectPageLayout -> idObjectPageLayout으로 수정
+            this.byId("ObjectPageLayout").bindElement(sPath);
+
         },
 
         backNav : function(){
