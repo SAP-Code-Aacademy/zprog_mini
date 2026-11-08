@@ -28,6 +28,17 @@
     content: "\e0ab";
 } */
 
+
+/* 상단 헤더 콘텐츠 영역 */
+.customObjectPage .sapFDynamicPageHeader {
+    padding-bottom: 50px !important;
+    margin-bottom: 44px !important;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+}
+
+
+
 /* 텝바 영역 */
 /* 탭 아이콘 */
 .customObjectPage .sapMITBSelectItemIcon::before {
@@ -43,7 +54,12 @@
     color: #48515E;
 }
 
-/* 탭바  */
+/* 탭바 두꺠 */
+.customObjectPage .sapMITBHead {
+    padding: 5px 0px;
+}
+
+/* 탭바 아이템  */
 .customObjectPage .sapMITBItem  {
     padding: 0 40px;
 }
@@ -55,7 +71,7 @@
 
 /* 탭바와 상단 HeaderContent 간의 간격 */
 .customObjectPage .sapMITBHead{
-    margin-top: 44px;
+    /* margin-top: 44px; */
 }
 
 
