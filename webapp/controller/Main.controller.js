@@ -79,6 +79,9 @@ sap.ui.define([
             oCategoriesModel.loadData(sap.ui.require.toUrl("zprogmini/model/category.json"));
             this.getView().setModel(oCategoriesModel, "CategoriesData");
         
+            // 오늘의 추천 카드용 모델
+            this.getView().setModel(new JSONModel({ picked: false }), "pick");
+
             let oChart = this.byId("idScopeChart");
             oChart.setVizProperties({
             title: { text: "가게별 별점" },
@@ -141,10 +144,8 @@ sap.ui.define([
             oCancel.getParent().close();
         
         },
-
-        onRandom: function () {
-            // Menu.json 데이터 가져오기
-            var aMenu = this.getView().getModel().getProperty("/Restaurant"); //점메추 가져오는 property 이름 변경 menu -> Restaurant
+         onRandom: function () {
+            var aMenu = this.getView().getModel().getProperty("/Restaurant");
 
             if (!aMenu || aMenu.length === 0) {
                 sap.m.MessageToast.show("뽑을 맛집이 없어요!");
@@ -153,11 +154,10 @@ sap.ui.define([
 
             // 0 ~ (길이-1) 사이 랜덤 인덱스
             var iIndex = Math.floor(Math.random() * aMenu.length);
-            var sName = aMenu[iIndex].name;
+            var oPicked = aMenu[iIndex];
 
-            MessageBox.information("오늘의 점심은 [" + sName + "] 어때요?", {
-                title: "점메추"
-            });
+            // 팝업 대신 결과 객체 전체를 pick 모델에 저장
+            this.getView().getModel("pick").setData(Object.assign({ picked: true }, oPicked));
         },
          onpress: function () {
             if (!this.pcatDialog) {
