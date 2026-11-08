@@ -87,9 +87,10 @@
                 <actions>
                     <m:Button
                         text="찜하기"
-                        icon="sap-icon://unfavorite"
+                        icon="{= ${isFavorite} ? '../images/favorite_heart_pulse.gif' : 'sap-icon://unfavorite'}"
                         id="idButtonFavorite"
                         class="actionButton"
+                        activeIcon="../images/favorite_heart_burst.gif"
                         press=".onPressFavorite"
                     />
                     <m:Button
@@ -187,9 +188,10 @@
                         <m:HBox gap="14px">
                             <m:Button
                                 text="찜하기"
-                                icon="sap-icon://unfavorite"
+                                icon="{= ${isFavorite} ? '../images/favorite_heart_pulse.gif' : 'sap-icon://unfavorite'}"
                                 id="idButtonFavorit2e"
                                 class="actionButton"
+                                activeIcon="../images/favorite_heart_pop.gif"
                                 press=".onPressFavorite"
                                 type="Transparent"
                             />
