@@ -10,7 +10,7 @@
     border: 1px solid red;
 }
 /* Detail Page ObjectPageLayout IconBar에 아이콘 추가용*/
-.customObjectPage .sapMITHTextContent::before {
+/* .customObjectPage .sapMITHTextContent::before {
     font-family: "SAP-icons";
     content: "\e070";
     margin-right: 8px;
@@ -23,7 +23,22 @@
 
 .customObjectPage .sapMITBFilter:nth-child(3) .sapMITHTextContent::before {
     content: "\e0ab";
+} */
+
+/* 텝바 영역 */
+/* 탭 아이콘 */
+.customObjectPage .sapUxAPAnchorBar .sapMBtnIcon {
+    font-size: 50px !important;
 }
+
+/* 탭 글자 */
+.customObjectPage .sapUxAPAnchorBar .sapMBtnContent {
+    font-size: 50px !important;
+    font-weight: 70;
+}
+
+
+
 
 /* 상단 헤더 */
 
@@ -144,4 +159,116 @@
 
 .marginTop10px{
     margin-top: 10px;
+}
+
+
+/* 찜하기 · 공유하기 버튼 */
+
+.actionButton {
+    height: auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+}
+
+.actionButton .sapMBtnInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    width: auto;
+    height: auto;
+    min-height: 0;
+    padding: 11px 22px !important;
+
+    border: 1.5px solid #CDD3DC;
+    border-radius: 12px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.actionButton .sapMBtnIcon {
+    position: static;
+    float: none;
+    flex-shrink: 0;
+    margin: 0;
+
+    width: 22px;
+    height: 26px;
+    line-height: 26px;
+    font-size: 22px;
+    color: #454D5B !important;
+}
+
+.actionButton .sapMBtnContent {
+    padding: 0;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    color: #08090A !important;
+}
+
+/* 버튼 호버 시 색 */
+.actionButton:hover .sapMBtnContent {
+    color: #08090A !important;
+}
+
+.actionButton:hover .sapMBtnIcon {
+    color: #454D5B !important;
+}
+
+
+/* 나란히 있는 버튼 사이 간격 */
+.actionButton + .actionButton {
+    margin-left: 12px;
+}
+
+/* 상단 제목과 버튼 영역 세로 중앙 정렬 */
+.topHeader .sapFDynamicPageTitleMain {
+    align-items: center;
+}
+
+.topHeader .sapFDynamicPageTitleMainActions {
+    align-self: center;
+}
+
+/* 상단 버튼 */
+.topHeader .sapMBtn {
+    height: auto;
+    padding: 0;
+}
+
+.topHeader .sapMBtnInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    height: auto;
+    padding: 8px 16px;
+    border: 1px solid #CDD3DC;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.topHeader .sapMBtnIcon {
+    position: static;
+    margin: 0;
+    width: 20px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 20px;
+    color: #454D5B !important;
+}
+
+.topHeader .sapMBtnContent {
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #08090A !important;
+}
+
+.topHeader .sapMBtn + .sapMBtn {
+    margin-left: 12px;
 }
