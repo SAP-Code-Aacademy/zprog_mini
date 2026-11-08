@@ -1,0 +1,44 @@
+{
+  "Location": [
+    {
+      "restaurantID": 0,
+      "name": "홍매",
+      "latitude": 37.4813310399817,
+      "longitude": 126.898007253932,
+      "roadAddress": "서울특별시 구로구 디지털로32가길 47",
+      "transportInfo": "구로디지털단지역 인근"
+    },
+    {
+      "restaurantID": 1,
+      "name": "금성관나주곰탕 구로직영점",
+      "latitude": 37.48283759676,
+      "longitude": 126.89997088606,
+      "roadAddress": "서울특별시 구로구 디지털로32길 92",
+      "transportInfo": "구로디지털단지역 2번 출구, 깔깔거리 끝 건너편"
+    },
+    {
+      "restaurantID": 2,
+      "name": "시골통돼지볶음 서울구로점",
+      "latitude": 37.4818544983482,
+      "longitude": 126.899024102409,
+      "roadAddress": "서울특별시 구로구 시흥대로163길 20",
+      "transportInfo": "구로디지털단지역 6번 출구에서 도보 약 11분"
+    },
+    {
+      "restaurantID": 3,
+      "name": "백화돈 구로본점",
+      "latitude": 37.4821517534789,
+      "longitude": 126.898933252251,
+      "roadAddress": "서울특별시 구로구 디지털로32가길 25",
+      "transportInfo": "구로디지털단지역 2번 출구에서 도보 약 6분"
+    },
+    {
+      "restaurantID": 4,
+      "name": "우리순대국",
+      "latitude": 37.4821517534789,
+      "longitude": 126.898933252251,
+      "roadAddress": "서울특별시 구로구 디지털로32가길 25",
+      "transportInfo": "구로디지털단지역 2번 출구에서 도보 약 8분"
+    }
+  ]
+}

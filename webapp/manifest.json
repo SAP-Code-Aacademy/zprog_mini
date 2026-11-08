@@ -65,6 +65,10 @@
       "review" : {
         "type": "sap.ui.model.json.JSONModel",
         "uri": "model/review.json"
+      },
+      "location" : {
+        "type": "sap.ui.model.json.JSONModel",
+        "uri": "model/location.json"
       }
     },
     "resources": {
