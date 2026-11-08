@@ -5,7 +5,7 @@ sap.ui.define([
     "sap/ui/model/FilterOperator",
     "sap/m/MessageBox",
     "sap/ui/model/Sorter"
-], (Controller,JSONModel,Filter,FilterOperator,MessageBox,Sorter) => {
+], (Controller, JSONModel, Filter, FilterOperator, MessageBox, Sorter) => {
     "use strict";
 
     return Controller.extend("zprogmini.controller.Main", {
@@ -51,7 +51,7 @@ sap.ui.define([
             this.getView().setModel(new JSONModel({ Menu: aChart }), "chart");
             this.oRestauran = oRestaurantModel.getData();
 
-        
+
             let oDialogModel1 = new JSONModel({
                 restaurantId: "",
                 menuId: "",
@@ -69,44 +69,44 @@ sap.ui.define([
             let oCategoriesModel = new JSONModel();
             oCategoriesModel.loadData(sap.ui.require.toUrl("zprogmini/model/category.json"));
             this.getView().setModel(oCategoriesModel, "CategoriesData");
-        
+
             // 오늘의 추천 카드용 모델
             this.getView().setModel(new JSONModel({ picked: false }), "pick");
 
             let oChart = this.byId("idScopeChart");
             oChart.setVizProperties({
-            title: { text: "가게별 별점" },
-            plotArea: {
+                title: { text: "가게별 별점" },
+                plotArea: {
                     colorPalette: ["#FFD400"],          // 막대 노랑색
                     gap: { groupSpacing: 3 },           // 막대 간격을 넓혀 두께를 절반 수준으로
                     dataLabel: { visible: true }
-                    },
-            valueAxis: {
+                },
+                valueAxis: {
                     title: { visible: false },
                     scale: { fixedRange: true, minValue: 0, maxValue: 5 },
                     label: { numberFormat: "0" }        // 0, 1, 2… 정수로 표시
-                    },
-            categoryAxis: { title: { visible: false } }
+                },
+                categoryAxis: { title: { visible: false } }
             });
         },
 
-        onNavDetail: function(oEvent) {
+        onNavDetail: function (oEvent) {
             console.log("========oContext========");
 
             let aButton = oEvent.getSource().getParent();
             let oContext = aButton.getBindingContext().getObject();
             let oId = oContext.id;
-            
+
             console.log(oContext);
             console.log(aButton);
             console.log(oId);
 
             // //manifest.json에 등록된 Router 정보 가져오기
             const oRouter = this.getOwnerComponent().getRouter();
-            
+
             //Router 중에서, RouteDetail(라우터 이름)로 이동
-            oRouter.navTo("RouteDetail",{
-                paramOrder : oId
+            oRouter.navTo("RouteDetail", {
+                paramOrder: oId
                 //op: "Detail"
             });
 
@@ -125,9 +125,9 @@ sap.ui.define([
         onCancel: function (oEvent) {
             let oCancel = oEvent.getSource();
             oCancel.getParent().close();
-        
+
         },
-         onRandom: function () {
+        onRandom: function () {
             var aMenu = this.getView().getModel().getProperty("/Restaurant");
 
             if (!aMenu || aMenu.length === 0) {
@@ -142,7 +142,7 @@ sap.ui.define([
             // 팝업 대신 결과 객체 전체를 pick 모델에 저장
             this.getView().getModel("pick").setData(Object.assign({ picked: true }, oPicked));
         },
-         onpress: function () {
+        onpress: function () {
             if (!this.pcatDialog) {
                 this.pcatDialog = this.loadFragment({
                     name: "zprogmini.view.fragment.MenuCategories"
@@ -179,7 +179,7 @@ sap.ui.define([
 
             this.onCloseDialog();
         },
-        onRestaurantChange: function(oEvent) {
+        onRestaurantChange: function (oEvent) {
             let oSelectedItem = oEvent.getParameter("selectedItem");
 
             if (!oSelectedItem) {
@@ -203,9 +203,9 @@ sap.ui.define([
 
             // 이전에 선택했던 메뉴 초기화
             this.getView().getModel("dialog").setProperty("/menuId", "");
-            },
+        },
 
-        onSave: function(oEvent) {
+        onSave: function (oEvent) {
             let oModel = this.getView().getModel();
             let oData = this.getView().getModel("dialog").getData();
 
@@ -215,7 +215,7 @@ sap.ui.define([
             // 새로운 Review 객체 만들기
             let oNewReview = {
                 // id: Math.max(0, ...aReview.map(item => item.id)) + 1,
-                id : oData.id, //가져온 레스토랑 메뉴 id로 저장 변경
+                id: oData.id, //가져온 레스토랑 메뉴 id로 저장 변경
                 date: oData.Date,
                 menuId: oData.menuId,
                 revisit: oData.revisitIndex === 0,
@@ -235,7 +235,7 @@ sap.ui.define([
             oEvent.getSource().getParent().close();
         },
 
-        onSelect: function(oEvent){
+        onSelect: function (oEvent) {
             console.log("========onSelect=======")
 
             let oContext = oEvent.getParameter("listItem").getBindingContext();
@@ -244,7 +244,7 @@ sap.ui.define([
             console.log(this.DeletePath);
         },
 
-        onDelete: function() {
+        onDelete: function () {
             let oTable = this.byId("idProductsTable");
             let oSelectedItem = oTable.getSelectedItem();
 
@@ -267,14 +267,14 @@ sap.ui.define([
 
         },
 
-        onSortChange:function(oEvent) {
+        onSortChange: function (oEvent) {
             let sKey = oEvent.getParameter("selectedItem").getKey();
             let oTable = this.byId("idProductsTable");
             let oBinding = oTable.getBinding("items");
 
             let oSorter;
 
-            if(sKey === "desc"){
+            if (sKey === "desc") {
                 oSorter = new Sorter("avgScope", true); // scope --> 별점 평균값인 avgScope 으로 변경 oninit 함수에서 this.으로 저장 후 사용
             } else {
                 oSorter = new Sorter("avgScope", false);
@@ -282,51 +282,51 @@ sap.ui.define([
 
             oBinding.sort(oSorter);
         },
-        onSortDistance:function(oEvent1) {
+        onSortDistance: function (oEvent1) {
             let sKey1 = oEvent1.getParameter("selectedItem").getKey();
             let oTable1 = this.byId("idProductsTable");
             let oBinding1 = oTable1.getBinding("items");
 
             let oDistance;
-            
-            if(sKey1 === "Dasc"){
+
+            if (sKey1 === "Dasc") {
                 oDistance = new Sorter("distance", true);
             } else {
                 oDistance = new Sorter("distance", false);
             };
-            
+
             oBinding1.sort(oDistance);
         },
 
-        listFind: function(){
+        listFind: function () {
             let listId = this.byId("listId").getValue();
             let oTableList = this.byId("idProductsTable");
 
-             if(listId === ""){
+            if (listId === "") {
                 oTableList.getBinding("items").filter([]);
                 return;
             }
 
             //리스트 필터 적용
-            let oFilter = new Filter("name", FilterOperator.EQ,listId);
+            let oFilter = new Filter("name", FilterOperator.EQ, listId);
 
             //테이블에 리스트 적용
-            oTableList.getBinding("items").filter(oFilter);  
+            oTableList.getBinding("items").filter(oFilter);
 
         },
-        onFavorite:function(oEvent) {
+        onFavorite: function (oEvent) {
             let oIcon = oEvent.getSource();
             let oSrc = oIcon.getSrc();
 
-            if(oSrc === "sap-icon://add-favorite") {
+            if (oSrc === "sap-icon://add-favorite") {
                 oIcon.setSrc("sap-icon://favorite");
-            } else  {
+            } else {
                 oIcon.setSrc("sap-icon://add-favorite");
             };
         },
-        onReset:function() {
+        onReset: function () {
 
-            
+
             let oTable = this.byId("idProductsTable");
             let oBinding = oTable.getBinding("items");
             let oCombo1 = this.byId("ComboScope");
@@ -337,6 +337,6 @@ sap.ui.define([
 
             oBinding.sort(null);
         }
-        
+
     });
 });

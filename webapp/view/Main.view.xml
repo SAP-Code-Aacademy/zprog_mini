@@ -1,163 +1,236 @@
 <mvc:View
-		controllerName="zprogmini.controller.Main" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.f"
-    xmlns:layout="sap.ui.layout" xmlns:c="sap.ui.core" xmlns:viz="sap.viz.ui5.controls"
-    xmlns:viz.data="sap.viz.ui5.data" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" height="100%">
-		<f:DynamicPage id="dynamicPageId" >
-			<f:title>
-				<f:DynamicPageTitle>
-					<f:heading>
-						<Title text="구디 맛집추천"/>
-					</f:heading>
-					<!-- <f:navigationActions> -->
-					<f:actions>
-						<Button text="점메추" icon="sap-icon://sys-help-2" type="Emphasized" press="onRandom" />
-						<Button text="종류별 검색" press="onpress" />
-               		</f:actions>
-					<!-- </f:navigationActions> -->
-				</f:DynamicPageTitle>
-			</f:title>
-			
-			<f:content>
-				<VBox>
-					<Table id="idProductsTable"
-							sticky="HeaderToolbar"
-							items="{/Restaurant}"
-							width="auto"
-							selectionChange=".onSelect"
-							mode="SingleSelectMaster">
-						<headerToolbar>
-							<Toolbar>
-								<Title text="리스트"/>
-								<Input width="15%" id="listId"/>
-								<Button text="검색" press="listFind"/>
-								<ToolbarSpacer/>
-								<Button text="추가" type="Emphasized" press=".onAdd"/>
-								<Button text="삭제" type="Reject" press=".onDelete"/>
-								<Button text="정렬 초기화" press=".onReset"/>
-							</Toolbar>
-						</headerToolbar>
-						<columns>
-							<Column hAlign="Center" width="55px">
-								<Text text="즐겨찾기" />
-							</Column>
-							<Column hAlign="Center">
-								<Text text="상호명" />
-							</Column>
-							<Column hAlign="Center">
-								<Text text="종류" />
-							</Column>
-							<Column hAlign="Center">
-								<Text text="대표 메뉴" />
-							</Column>
-							<!-- <Column hAlign="Center">
-								<Text text="별점" />
-							</Column> -->
-							<Column hAlign="Center">
-								<header>
-                            		<VBox>
-										<Text text="평균 별점" />
-										<ComboBox width="8rem" selectionChange=".onSortChange" id="ComboScope">
-											<c:Item key="desc" text="별점 높은 순" />
-											<c:Item key="asc" text="별점 낮은 순"/>
-										</ComboBox>
-                            		</VBox>
-                        </header>
-							</Column>
-							<Column hAlign="Center">
-								<header>
-									<VBox> 
-										<Text text="거리" />
-										<ComboBox width="8rem" selectionChange=".onSortDistance" id="ComboDistance">
-											<c:Item key="Dasc" text="먼 거리 순"/>
-											<c:Item key="Ddesc" text="가까운 거리 순" />
-										</ComboBox>
-									</VBox>
-                        		</header>
-							</Column>
-							<Column hAlign="Center">
-								<Text text="리뷰 보기" />
-							</Column>
-							<!-- <Column hAlign="Center">
-								<Text text="리뷰보기" />
-							</Column> -->
-						</columns>
-						<items>
-							<ColumnListItem vAlign="Middle">
-								<cells>
-									<c:Icon src="sap-icon://add-favorite"
-											press=".onFavorite"/>
-									<Text text="{name}" />
-									<Text text="{category}" />
-									<Text text="{signatureMenu}" />
-									<Text text="{avgScope}" />
-									<Text text="{distance}" />
-									<Button press="onNavDetail" icon="sap-icon://sys-help-2" type="Emphasized"/>
-								</cells>
-							</ColumnListItem>
-						</items>
-					</Table>
-					<HBox width="100%" alignItems="Start" class="sapUiSmallMarginTop">
- 
-					<VBox width="50%">
+    controllerName="zprogmini.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    xmlns:c="sap.ui.core"
+    xmlns:viz="sap.viz.ui5.controls"
+    xmlns:viz.data="sap.viz.ui5.data"
+    xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    height="100%"
+>
+    <f:DynamicPage id="dynamicPageId">
+        <f:title>
+            <f:DynamicPageTitle>
+                <f:heading>
+                    <Title text="구디 맛집추천" />
+                </f:heading>
+                <f:actions>
+                    <Button
+                        text="점메추"
+                        icon="sap-icon://sys-help-2"
+                        type="Emphasized"
+                        press="onRandom" />
+                    <Button
+                        text="종류별 검색"
+                        press="onpress" />
+                </f:actions>
+            </f:DynamicPageTitle>
+        </f:title>
 
-					<viz:VizFrame id="idScopeChart" vizType="stacked_bar" width="100%" height="300px"
-						uiConfig="{applicationSet:'fiori'}">
-						<viz:dataset>
-							<viz.data:FlattenedDataset data="{chart>/Menu}">
-								<viz.data:dimensions>
-									<viz.data:DimensionDefinition name="상호명" value="{chart>name}" />
-								</viz.data:dimensions>
-								<viz.data:measures>
-									<viz.data:MeasureDefinition name="별점" value="{chart>scope}" />
-								</viz.data:measures>
-							</viz.data:FlattenedDataset>
-						</viz:dataset>
-						<viz:feeds>
-							<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="상호명" />
-							<viz.feeds:FeedItem uid="valueAxis" type="Measure" values="별점" />
-						</viz:feeds>
-					</viz:VizFrame>
-					</VBox>
-						<VBox width="50%" class="sapUiSmallMarginBegin">
-							<Panel headerText="점메추 결과" width="auto">
-                                <VBox class="sapUiSmallMargin">
-
-                                    <HBox alignItems="Center">
-
-                                        <VBox>
-                                            <layoutData>
-                                                <FlexItemData growFactor="1"/>
-                                            </layoutData>
-
-                                            <Text text="점메추 버튼을 눌러 오늘 갈 곳을 뽑아 보세요."
-                                                visible="{= !${pick>/picked} }"/>
-
-                                            <VBox visible="{pick>/picked}">
-                                                <Title text="{pick>/name}" level="H3"/>
-                                                <Text text="대표 메뉴: {pick>/signatureMenu}" class="sapUiTinyMarginTop"/>
-                                                <ObjectStatus text="{pick>/category}" state="Information" class="sapUiTinyMarginTop"/>
-                                                <Text text="거리 {pick>/distance} km" class="sapUiTinyMarginTop"/>
-                                                <Text text="영업시간 {pick>/open} ~ {pick>/close}"/>
-                                                <Text text="전화 {pick>/phoneNumber}"/>
-                                            </VBox>
-                                        </VBox>
-
-                                        <Image src="{pick>/imgUrl}"
-                                            alt="{pick>/name}"
-                                            width="14rem"
-                                            height="10rem"
-                                            densityAware="false"
-                                            class="pickImage sapUiSmallMarginBegin"
-                                            visible="{pick>/picked}"/>
-                                    </HBox>
-                                    <Button text="다시 뽑기" icon="sap-icon://refresh" width="100%" type="Emphasized"
-                                            press=".onRandom" class="sapUiSmallMarginTop"/>
+        <f:content>
+            <VBox>
+                <Table
+                    id="idProductsTable"
+                    sticky="HeaderToolbar"
+                    items="{/Restaurant}"
+                    width="auto"
+                    selectionChange=".onSelect"
+                    mode="SingleSelectMaster" >
+                    <headerToolbar>
+                        <Toolbar>
+                            <Title text="리스트" />
+                            <Input
+                                width="15%"
+                                id="listId" />
+                            <Button
+                                text="검색"
+                                press="listFind" />
+                            <ToolbarSpacer />
+                            <Button
+                                text="추가"
+                                type="Emphasized"
+                                press=".onAdd" />
+                            <Button
+                                text="삭제"
+                                type="Reject"
+                                press=".onDelete" />
+                            <Button
+                                text="정렬 초기화"
+                                press=".onReset" />
+                        </Toolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column
+                            hAlign="Center"
+                            width="55px" >
+                            <Text text="즐겨찾기" />
+                        </Column>
+                        <Column hAlign="Center">
+                            <Text text="상호명" />
+                        </Column>
+                        <Column hAlign="Center">
+                            <Text text="종류" />
+                        </Column>
+                        <Column hAlign="Center">
+                            <Text text="대표 메뉴" />
+                        </Column>
+                        <Column hAlign="Center">
+                            <header>
+                                <VBox>
+                                    <Text text="평균 별점" />
+                                    <ComboBox
+                                        width="8rem"
+                                        selectionChange=".onSortChange"
+                                        id="ComboScope" >
+                                        <c:Item
+                                            key="desc"
+                                            text="별점 높은 순" />
+                                        <c:Item
+                                            key="asc"
+                                            text="별점 낮은 순" />
+                                    </ComboBox>
                                 </VBox>
-                            </Panel>
-						</VBox>
+                            </header>
+                        </Column>
+                        <Column hAlign="Center">
+                            <header>
+                                <VBox>
+                                    <Text text="거리" />
+                                    <ComboBox
+                                        width="8rem"
+                                        selectionChange=".onSortDistance"
+                                        id="ComboDistance" >
+                                        <c:Item
+                                            key="Dasc"
+                                            text="먼 거리 순" />
+                                        <c:Item
+                                            key="Ddesc"
+                                            text="가까운 거리 순" />
+                                    </ComboBox>
+                                </VBox>
+                            </header>
+                        </Column>
+                        <Column hAlign="Center">
+                            <Text text="리뷰 보기" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem vAlign="Middle">
+                            <cells>
+                                <c:Icon
+                                    src="sap-icon://add-favorite"
+                                    press=".onFavorite" />
+                                <Text text="{name}" />
+                                <Text text="{category}" />
+                                <Text text="{signatureMenu}" />
+                                <Text text="{avgScope}" />
+                                <Text text="{distance}" />
+                                <Button
+                                    press="onNavDetail"
+                                    icon="sap-icon://sys-help-2"
+                                    type="Emphasized" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <HBox
+                    width="100%"
+                    alignItems="Start"
+                    class="sapUiSmallMarginTop" >
+                    <VBox width="50%">
+                        <viz:VizFrame
+                            id="idScopeChart"
+                            vizType="stacked_bar"
+                            width="100%"
+                            height="300px"
+                            uiConfig="{applicationSet:'fiori'}" >
+                            <viz:dataset>
+                                <viz.data:FlattenedDataset data="{chart>/Menu}">
+                                    <viz.data:dimensions>
+                                        <viz.data:DimensionDefinition
+                                            name="상호명"
+                                            value="{chart>name}" />
+                                    </viz.data:dimensions>
+                                    <viz.data:measures>
+                                        <viz.data:MeasureDefinition
+                                            name="별점"
+                                            value="{chart>scope}" />
+                                    </viz.data:measures>
+                                </viz.data:FlattenedDataset>
+                            </viz:dataset>
+                            <viz:feeds>
+                                <viz.feeds:FeedItem
+                                    uid="categoryAxis"
+                                    type="Dimension"
+                                    values="상호명" />
+                                <viz.feeds:FeedItem
+                                    uid="valueAxis"
+                                    type="Measure"
+                                    values="별점" />
+                            </viz:feeds>
+                        </viz:VizFrame>
+                    </VBox>
+                    <VBox
+                        width="50%"
+                        class="sapUiSmallMarginBegin" >
+                        <Panel
+                            headerText="점메추 결과"
+                            width="auto" >
+                            <VBox class="sapUiSmallMargin">
+                                <HBox alignItems="Center">
+                                    <VBox>
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                        </layoutData>
 
-					</HBox>
-				</VBox>
-			</f:content>
-		</f:DynamicPage>
+                                        <Text
+                                            text="점메추 버튼을 눌러 오늘 갈 곳을 뽑아 보세요."
+                                            visible="{= !${pick>/picked} }" />
+
+                                        <VBox visible="{pick>/picked}">
+                                            <Title
+                                                text="{pick>/name}"
+                                                level="H3" />
+                                            <Text
+                                                text="대표 메뉴: {pick>/signatureMenu}"
+                                                class="sapUiTinyMarginTop" />
+                                            <ObjectStatus
+                                                text="{pick>/category}"
+                                                state="Information"
+                                                class="sapUiTinyMarginTop" />
+                                            <Text
+                                                text="거리 {pick>/distance} km"
+                                                class="sapUiTinyMarginTop" />
+                                            <Text
+                                                text="영업시간 {pick>/open} ~ {pick>/close}" />
+                                            <Text
+                                                text="전화 {pick>/phoneNumber}" />
+                                        </VBox>
+                                    </VBox>
+
+                                    <Image
+                                        src="{pick>/imgUrl}"
+                                        alt="{pick>/name}"
+                                        width="14rem"
+                                        height="10rem"
+                                        densityAware="false"
+                                        class="pickImage sapUiSmallMarginBegin"
+                                        visible="{pick>/picked}" />
+                                </HBox>
+                                <Button
+                                    text="다시 뽑기"
+                                    icon="sap-icon://refresh"
+                                    width="100%"
+                                    type="Emphasized"
+                                    press=".onRandom"
+                                    class="sapUiSmallMarginTop" />
+                            </VBox>
+                        </Panel>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </f:content>
+    </f:DynamicPage>
 </mvc:View>
