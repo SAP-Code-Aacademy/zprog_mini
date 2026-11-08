@@ -126,7 +126,7 @@
                         height="282px"
                         class="restaurantMainImage"
                     />
-                
+               
 
                 <!-- ============================== -->
                 <!-- 가운데 가게 정보 -->
@@ -184,8 +184,51 @@
                 <!-- 지도 -->
                 <!-- ============================== -->
 
-                <m:VBox>
-                    <m:Text text="hello" />
+                <m:VBox id="idVBoxlocationInfo" class="borderLeftGray">
+                    <m:Image 
+                        src="{
+                        formatter : '.formatter.mapURI',
+                        parts: [
+                            {path: 'location>longitude'},
+                            {path: 'location>latitude'}
+                        ]}"
+                        width="404px"
+                        height="120px"
+                        class="radius16"
+                        />
+                    <m:VBox  alignItems="Center" class="">
+                        <m:VBox gap="15px" alignItems="Start">
+                        <m:HBox gap="15px" justifyContent="Start" alignItems="Center" class="marginLeft17px marginTop10px  ">
+                            <core:Icon color="#505968" src="sap-icon://map" size="25px" />
+                            <m:Text text= "{location>roadAddress}" class="bold fontSize14 singleLine"/>
+                        </m:HBox>
+                        <m:HBox gap="15px" justifyContent="Start" alignItems="Center" class="marginLeft17px">
+                            <core:Icon color="#505968" src="sap-icon://subway-train" size="25px" />
+                            <m:Text text= "{location>transportInfo}" class="fontSize14 singleLine"/>
+                        </m:HBox>
+                        <m:HBox gap="15px" justifyContent="Start" alignItems="Center" class="marginLeft17px">
+                            <core:Icon color="#505968" src="sap-icon://call" size="25px" />
+                            <m:Text text= "{phoneNumber}" class="fontSize14 singleLine"/>
+                        </m:HBox>
+                        <m:HBox gap="15px" justifyContent="Start" alignItems="Center" class="marginLeft17px">
+                            <core:Icon color="#505968" src="sap-icon://pending" size="25px" />
+                            <m:Text text= "{= '평일 ' + ${open} + ' ~ ' + ${close}}"  class="fontSize14 singleLine"/>
+                            <m:Button type="Accept" text="영업중" visible="{
+                                parts: [
+                                 {path : 'open'},{path : 'close'}
+                                ],
+                                formatter: '.formatter.isStoreOpen'
+                            }" />
+
+                            <m:Button type="Reject" text="영업 준비중" visible="{
+                                parts: [
+                                 {path : 'open'},{path : 'close'}
+                                ],
+                                formatter: '.formatter.isStoreClosed'
+                            }" />
+                        </m:HBox>
+                        </m:VBox>
+                    </m:VBox>
                 </m:VBox>
             </m:HBox>
         </headerContent>
