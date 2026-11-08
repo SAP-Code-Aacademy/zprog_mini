@@ -180,7 +180,10 @@
                                 class="headerReviewCountText"
                             />
                         </m:HBox>
-
+                        <m:Text
+                                text="{detailReview>/0/content}"
+                                class="fontSize20"
+                            />
                         <m:HBox gap="14px">
                             <m:Button
                                 text="찜하기"
