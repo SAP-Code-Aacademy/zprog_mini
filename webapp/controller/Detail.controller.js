@@ -27,7 +27,7 @@ sap.ui.define(
         const aRestaurants = oModel.getProperty("/Restaurant");
 
         const iRestaurantId = Number(sRestaurantId);
-
+        
         const iIndex = aRestaurants.findIndex(
           (oItem) => oItem.id === iRestaurantId,
         );
@@ -49,6 +49,21 @@ sap.ui.define(
 
         const ab = this.getView().getModel("detailReview").getData();
         console.log(ab);
+
+        // Location에서 해당 Restaurants 찾기
+        const oLocationModel = this.getOwnerComponent().getModel("location");
+        const aLocations = oLocationModel.getProperty("/Location");
+        
+        const iLocationIndex = aLocations.findIndex(
+          (oItem) => oItem.restaurantID === iRestaurantId,
+        );
+
+        console.log(aLocations[iLocationIndex]);
+
+        this.byId("idVBoxlocationInfo").bindElement({
+              path: `/Location/${iLocationIndex}`,
+              model: "location"
+            });
       },
 
       backNav: function () {
