@@ -47,6 +47,7 @@
                             <Button
                                 text="검색"
                                 press="listFind" />
+                            <Button text="즐겨찾기" press=".onFavoriteButton" />
                             <ToolbarSpacer />
                             <Button
                                 text="추가"
