@@ -329,20 +329,18 @@
                 title="정보"
                 titleUppercase="false"
             >
-             <customAnchorBarButton>
-        <m:Button
-            text="가게 기본 정보"
-            icon="sap-icon://home"
-            class="sectionTab"
-
-        />
-    </customAnchorBarButton>
+                <customAnchorBarButton>
+                    <m:Button
+                        text="가게 기본 정보"
+                        icon="sap-icon://home"
+                        class="sectionTab"
+                    />
+                </customAnchorBarButton>
                 <subSections>
                     <ObjectPageSubSection
                         title="가게 기본 정보"
                         titleUppercase="false"
                     >
-                    
                         <blocks>
                             <m:HBox
                                 class="infoReviewContainer"
@@ -477,14 +475,13 @@
                 title="메뉴"
                 titleUppercase="false"
             >
-                      <customAnchorBarButton>
-        <m:Button
-            text="메뉴"
-            icon="sap-icon://meal"
-            class="sectionTab"
-
-        />
-    </customAnchorBarButton>
+                <customAnchorBarButton>
+                    <m:Button
+                        text="메뉴"
+                        icon="sap-icon://meal"
+                        class="sectionTab"
+                    />
+                </customAnchorBarButton>
                 <subSections>
                     <ObjectPageSubSection
                         title="메뉴"
@@ -558,15 +555,14 @@
                 title="리뷰"
                 titleUppercase="false"
             >
-            <customAnchorBarButton>
-                 <m:Button
-            text="리뷰"
-            icon="sap-icon://discussion-2"
-            class="sectionTab"
+                <customAnchorBarButton>
+                    <m:Button
+                        text="리뷰"
+                        icon="sap-icon://discussion-2"
+                        class="sectionTab"
+                    />
+                </customAnchorBarButton>
 
-        />
-</customAnchorBarButton>
-       
                 <subSections>
                     <ObjectPageSubSection
                         title="리뷰 요약"
