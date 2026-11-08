@@ -100,7 +100,7 @@
  
 					<VBox width="50%">
 
-					<viz:VizFrame id="idScopeChart" vizType="stacked_bar" width="50%" height="300px"
+					<viz:VizFrame id="idScopeChart" vizType="stacked_bar" width="100%" height="300px"
 						uiConfig="{applicationSet:'fiori'}">
 						<viz:dataset>
 							<viz.data:FlattenedDataset data="{chart>/Menu}">
