@@ -243,7 +243,8 @@
 
                             <m:HBox
                                 class="infoReviewContainer"
-                                justifyContent="SpaceBetween"
+                                justifyContent="Center"
+                                alignItems="Start"
                                 width="100%">
 
                                 <!-- 왼쪽 : 가게 정보 -->
@@ -501,6 +502,12 @@
                                                         inverted="true"
                                                         class="reviewTag"/>
                                                 </m:HBox>
+
+                                                <m:Text
+                                                    text="메뉴 : {detailReview>menuId}"
+                                                    visible="{= !!${detailReview>menuId} }"
+                                                    wrapping="true"
+                                                    class="summaryMenu"/>
 
                                                 <!-- 사진 (이미지 경로가 있을 때만 표시) -->
                                                 <m:Image

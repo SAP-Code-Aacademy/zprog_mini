@@ -234,3 +234,14 @@
     font-size: 0.9rem;
     color: #555;
 }
+
+/* 왼쪽 가게 정보 패널 */
+.infoReviewContainer .infoPanel {
+    width: 420px;
+    margin-right: 2rem;   /* 두 패널 사이 간격 */
+}
+
+/* 오른쪽 리뷰 패널 */
+.infoReviewContainer .reviewSummaryPanel {
+    width: 480px;
+}
