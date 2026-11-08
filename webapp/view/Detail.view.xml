@@ -24,14 +24,13 @@
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
                 <expandedHeading>
-                    <m:HBox
-                    >
+                    <m:HBox>
                         <m:Image
                             alt="가게 이미지"
                             src="{imgUrl}"
                             width="113px"
                             height="91px"
-                            class= "resImg"
+                            class="resImg"
                         />
 
                         <m:VBox justifyContent="Center">
@@ -56,14 +55,13 @@
                 <actions />
 
                 <snappedHeading>
-                    <m:HBox
-                    >
+                    <m:HBox>
                         <m:Image
                             alt="가게 이미지"
                             src="{imgUrl}"
                             width="113px"
                             height="91px"
-                            class= "resImg"
+                            class="resImg"
                         />
 
                         <m:VBox justifyContent="Center">
@@ -90,7 +88,7 @@
                     <m:Button
                         text="찜하기"
                         icon="sap-icon://unfavorite"
-                        id ="idButtonFavorite"
+                        id="idButtonFavorite"
                         class="actionButton"
                         press=".onPressFavorite"
                     />
@@ -98,9 +96,8 @@
                         text="공유하기"
                         icon="sap-icon://share-2"
                         class="actionButton"
-                        id = "idButtonShare"
-                        press= ".onPressShare"
-
+                        id="idButtonShare"
+                        press=".onPressShare"
                     />
                 </actions>
             </ObjectPageDynamicHeaderTitle>
@@ -126,66 +123,93 @@
                         height="282px"
                         class="restaurantMainImage"
                     />
-               
 
-                <!-- ============================== -->
-                <!-- 가운데 가게 정보 -->
-                <!-- ============================== -->
+                    <!-- ============================== -->
+                    <!-- 가운데 가게 정보 -->
+                    <!-- ============================== -->
 
-                <m:VBox class="restaurantMainInfo" justifyContent="Start" alignItems="Start" gap="11px">
-                    <!-- 카테고리 -->
-                    <m:HBox
-                        class="categoryBox"
+                    <m:VBox
+                        class="restaurantMainInfo"
+                        justifyContent="Start"
+                        alignItems="Start"
+                        gap="11px"
                     >
-                        <m:Text text="{category}" class="categoryText"/>
-                        <m:Image src="../images/VectorRight.png" width="4.5px"/>
-                        <m:Text text="{genre}" class="categoryText"/>
-                    </m:HBox>
+                        <!-- 카테고리 -->
+                        <m:HBox class="categoryBox">
+                            <m:Text
+                                text="{category}"
+                                class="categoryText"
+                            />
+                            <m:Image
+                                src="../images/VectorRight.png"
+                                width="4.5px"
+                            />
+                            <m:Text
+                                text="{genre}"
+                                class="categoryText"
+                            />
+                        </m:HBox>
 
-                    <!-- 가게 이름 -->
-                    <m:Text
-                        text="{name}"
-                        class="restaurantName"
-                    />
+                        <!-- 가게 이름 -->
+                        <m:Text
+                            text="{name}"
+                            class="restaurantName"
+                        />
 
-                    <!-- 리뷰 별점 -->
-                    <m:HBox class="mainMenuInfo" gap="12px" alignItems="End">
-                        <m:Image src="../images/Rating_star.png" width="35px" height="35px"/>
-                        <m:Text class="ratingText" text="{
+                        <!-- 리뷰 별점 -->
+                        <m:HBox
+                            class="mainMenuInfo"
+                            gap="12px"
+                            alignItems="End"
+                        >
+                            <m:Image
+                                src="../images/Rating_star.png"
+                                width="35px"
+                                height="35px"
+                            />
+                            <m:Text
+                                class="ratingText"
+                                text="{
                             path: 'detailReview>/',
                             formatter: '.formatter.averageRating'
-                        }" />
+                        }"
+                            />
 
-                        <m:Text text="{= '(' + ${detailReview>/}.length + '개의 리뷰)'}" class="headerReviewCountText" />
-                    </m:HBox>
+                            <m:Text
+                                text="{= '(' + ${detailReview>/}.length + '개의 리뷰)'}"
+                                class="headerReviewCountText"
+                            />
+                        </m:HBox>
 
-                    <m:HBox gap="14px">
-                    <m:Button
-                        text="찜하기"
-                        icon="sap-icon://unfavorite"
-                        id ="idButtonFavorit2e"
-                        class="actionButton"
-                        press=".onPressFavorite"
-                        type="Transparent"
-                    />
-                    <m:Button
-                        text="공유하기"
-                        icon="sap-icon://share-2"
-                        class="actionButton"
-                        id = "idButtonShare2"
-                        type = "Transparent"
-                        press="onPressShare"
-
-                    />
-                    </m:HBox>
-                </m:VBox>
+                        <m:HBox gap="14px">
+                            <m:Button
+                                text="찜하기"
+                                icon="sap-icon://unfavorite"
+                                id="idButtonFavorit2e"
+                                class="actionButton"
+                                press=".onPressFavorite"
+                                type="Transparent"
+                            />
+                            <m:Button
+                                text="공유하기"
+                                icon="sap-icon://share-2"
+                                class="actionButton"
+                                id="idButtonShare2"
+                                type="Transparent"
+                                press="onPressShare"
+                            />
+                        </m:HBox>
+                    </m:VBox>
                 </m:HBox>
                 <!-- ============================== -->
                 <!-- 지도 -->
                 <!-- ============================== -->
 
-                <m:VBox id="idVBoxlocationInfo" class="borderLeftGray">
-                    <m:Image 
+                <m:VBox
+                    id="idVBoxlocationInfo"
+                    class="borderLeftGray"
+                >
+                    <m:Image
                         src="{
                         formatter : '.formatter.mapURI',
                         parts: [
@@ -195,38 +219,100 @@
                         width="404px"
                         height="120px"
                         class="radius16"
-                        />
-                    <m:VBox  alignItems="Center" class="">
-                        <m:VBox gap="15px" alignItems="Start">
-                        <m:HBox gap="15px" justifyContent="Start" alignItems="Center" class="marginLeft17px marginTop10px  ">
-                            <core:Icon color="#505968" src="sap-icon://map" size="25px" />
-                            <m:Text text= "{location>roadAddress}" class="bold fontSize14 singleLine"/>
-                        </m:HBox>
-                        <m:HBox gap="15px" justifyContent="Start" alignItems="Center" class="marginLeft17px">
-                            <core:Icon color="#505968" src="sap-icon://subway-train" size="25px" />
-                            <m:Text text= "{location>transportInfo}" class="fontSize14 singleLine"/>
-                        </m:HBox>
-                        <m:HBox gap="15px" justifyContent="Start" alignItems="Center" class="marginLeft17px">
-                            <core:Icon color="#505968" src="sap-icon://call" size="25px" />
-                            <m:Text text= "{phoneNumber}" class="fontSize14 singleLine"/>
-                        </m:HBox>
-                        <m:HBox gap="15px" justifyContent="Start" alignItems="Center" class="marginLeft17px">
-                            <core:Icon color="#505968" src="sap-icon://pending" size="25px" />
-                            <m:Text text= "{= '평일 ' + ${open} + ' ~ ' + ${close}}"  class="fontSize14 singleLine"/>
-                            <m:Button type="Accept" text="영업중" visible="{
+                    />
+                    <m:VBox
+                        alignItems="Center"
+                        class=""
+                    >
+                        <m:VBox
+                            gap="15px"
+                            alignItems="Start"
+                        >
+                            <m:HBox
+                                gap="15px"
+                                justifyContent="Start"
+                                alignItems="Center"
+                                class="marginLeft17px marginTop10px  "
+                            >
+                                <core:Icon
+                                    color="#505968"
+                                    src="sap-icon://map"
+                                    size="25px"
+                                />
+                                <m:Text
+                                    text="{location>roadAddress}"
+                                    class="bold fontSize14 singleLine"
+                                />
+                            </m:HBox>
+                            <m:HBox
+                                gap="15px"
+                                justifyContent="Start"
+                                alignItems="Center"
+                                class="marginLeft17px"
+                            >
+                                <core:Icon
+                                    color="#505968"
+                                    src="sap-icon://subway-train"
+                                    size="25px"
+                                />
+                                <m:Text
+                                    text="{location>transportInfo}"
+                                    class="fontSize14 singleLine"
+                                />
+                            </m:HBox>
+                            <m:HBox
+                                gap="15px"
+                                justifyContent="Start"
+                                alignItems="Center"
+                                class="marginLeft17px"
+                            >
+                                <core:Icon
+                                    color="#505968"
+                                    src="sap-icon://call"
+                                    size="25px"
+                                />
+                                <m:Text
+                                    text="{phoneNumber}"
+                                    class="fontSize14 singleLine"
+                                />
+                            </m:HBox>
+                            <m:HBox
+                                gap="15px"
+                                justifyContent="Start"
+                                alignItems="Center"
+                                class="marginLeft17px"
+                            >
+                                <core:Icon
+                                    color="#505968"
+                                    src="sap-icon://pending"
+                                    size="25px"
+                                />
+                                <m:Text
+                                    text="{= '평일 ' + ${open} + ' ~ ' + ${close}}"
+                                    class="fontSize14 singleLine"
+                                />
+                                <m:Button
+                                    type="Accept"
+                                    text="영업중"
+                                    visible="{
                                 parts: [
                                  {path : 'open'},{path : 'close'}
                                 ],
                                 formatter: '.formatter.isStoreOpen'
-                            }" />
+                            }"
+                                />
 
-                            <m:Button type="Reject" text="영업 준비중" visible="{
+                                <m:Button
+                                    type="Reject"
+                                    text="영업 준비중"
+                                    visible="{
                                 parts: [
                                  {path : 'open'},{path : 'close'}
                                 ],
                                 formatter: '.formatter.isStoreClosed'
-                            }" />
-                        </m:HBox>
+                            }"
+                                />
+                            </m:HBox>
                         </m:VBox>
                     </m:VBox>
                 </m:VBox>
@@ -253,8 +339,8 @@
                                 class="infoReviewContainer"
                                 justifyContent="Center"
                                 alignItems="Start"
-                                width="100%">
-
+                                width="100%"
+                            >
                                 <!-- 왼쪽 : 가게 정보 -->
                                 <m:Panel class="infoPanel">
                                     <m:VBox>
@@ -300,15 +386,27 @@
 
                                 <!-- 오른쪽 : 리뷰 / 별점 -->
                                 <m:Panel class="reviewSummaryPanel">
-
                                     <m:VBox>
-
                                         <!-- 헤더 -->
-                                        <m:HBox alignItems="Center" class="summaryHeader">
-                                            <core:Icon src="sap-icon://thumb-up" color="#E6A100" size="1.25rem"/>
-                                            <m:Title text="대표 리뷰" level="H4" class="summaryTitle"/>
+                                        <m:HBox
+                                            alignItems="Center"
+                                            class="summaryHeader"
+                                        >
+                                            <core:Icon
+                                                src="sap-icon://thumb-up"
+                                                color="#E6A100"
+                                                size="1.25rem"
+                                            />
+                                            <m:Title
+                                                text="대표 리뷰"
+                                                level="H4"
+                                                class="summaryTitle"
+                                            />
                                         </m:HBox>
-                                        <m:Text text="만점(5점)을 받은 리뷰예요" class="summarySubText"/>
+                                        <m:Text
+                                            text="만점(5점)을 받은 리뷰예요"
+                                            class="summarySubText"
+                                        />
 
                                         <!-- 5점 리뷰 목록 -->
                                         <m:List
@@ -318,19 +416,29 @@
                                             }"
                                             showSeparators="None"
                                             backgroundDesign="Transparent"
-                                            noDataText="아직 만점 리뷰가 없습니다">
-
-                                            <m:CustomListItem class="summaryCard">
-                                                <m:VBox class="summaryCardInner">
-
+                                            noDataText="아직 만점 리뷰가 없습니다"
+                                        >
+                                            <m:CustomListItem
+                                                class="summaryCard"
+                                            >
+                                                <m:VBox
+                                                    class="summaryCardInner"
+                                                >
                                                     <!-- 메뉴명 + 별점 -->
-                                                    <m:HBox justifyContent="SpaceBetween" alignItems="Center">
-                                                        <m:Text text="{detailReview>menuId}" class="summaryMenu"/>
+                                                    <m:HBox
+                                                        justifyContent="SpaceBetween"
+                                                        alignItems="Center"
+                                                    >
+                                                        <m:Text
+                                                            text="{detailReview>menuId}"
+                                                            class="summaryMenu"
+                                                        />
                                                         <m:RatingIndicator
                                                             value="{detailReview>scope}"
                                                             maxValue="5"
                                                             iconSize="0.9rem"
-                                                            editable="false"/>
+                                                            editable="false"
+                                                        />
                                                     </m:HBox>
 
                                                     <!-- 리뷰 내용 (비어 있으면 숨김) -->
@@ -338,13 +446,11 @@
                                                         text="{detailReview>content}"
                                                         visible="{= !!${detailReview>content} }"
                                                         wrapping="true"
-                                                        class="summaryText"/>
-
+                                                        class="summaryText"
+                                                    />
                                                 </m:VBox>
                                             </m:CustomListItem>
-
                                         </m:List>
-
                                     </m:VBox>
                                 </m:Panel>
                             </m:HBox>
@@ -394,11 +500,9 @@
                                     hSpacing="1"
                                     vSpacing="1"
                                     width="100%"
-                                    content="{Menu}">
-
-                                    <m:VBox
-                                        class="menuCard">
-
+                                    content="{Menu}"
+                                >
+                                    <m:VBox class="menuCard">
                                         <!-- 음식 이미지 -->
                                         <m:Image
                                             src="{imgUrl}"
@@ -445,33 +549,51 @@
                         <blocks>
                             <m:HBox
                                 width="100%"
-                                justifyContent="SpaceBetween">
-
-                                <m:VBox width="65%" class="reviewContentPanel">
-
+                                justifyContent="SpaceBetween"
+                            >
+                                <m:VBox
+                                    width="65%"
+                                    class="reviewContentPanel"
+                                >
                                     <m:List
                                         items="{detailReview>/}"
                                         showSeparators="None"
                                         backgroundDesign="Transparent"
-                                        noDataText="아직 작성된 리뷰가 없습니다">
-
+                                        noDataText="아직 작성된 리뷰가 없습니다"
+                                    >
                                         <m:CustomListItem class="reviewCard">
                                             <m:VBox class="reviewItem">
-
                                                 <!-- 상단: 메뉴명 + 날짜 -->
-                                                <m:HBox justifyContent="SpaceBetween" alignItems="Center">
-                                                    <m:Title text="{review>menuId}" level="H4" class="reviewMenuTitle"/>
-                                                    <m:Text text="{= ${detailReview>date}.substring(0, 10) }" class="reviewDate"/>
+                                                <m:HBox
+                                                    justifyContent="SpaceBetween"
+                                                    alignItems="Center"
+                                                >
+                                                    <m:Title
+                                                        text="{review>menuId}"
+                                                        level="H4"
+                                                        class="reviewMenuTitle"
+                                                    />
+                                                    <m:Text
+                                                        text="{= ${detailReview>date}.substring(0, 10) }"
+                                                        class="reviewDate"
+                                                    />
                                                 </m:HBox>
 
                                                 <!-- 별점 + 점수 -->
-                                                <m:HBox alignItems="Center" class="reviewRatingRow">
+                                                <m:HBox
+                                                    alignItems="Center"
+                                                    class="reviewRatingRow"
+                                                >
                                                     <m:RatingIndicator
                                                         value="{detailReview>scope}"
                                                         maxValue="5"
                                                         iconSize="1rem"
-                                                        editable="false"/>
-                                                    <m:Text text="{detailReview>scope} / 5" class="reviewScore"/>
+                                                        editable="false"
+                                                    />
+                                                    <m:Text
+                                                        text="{detailReview>scope} / 5"
+                                                        class="reviewScore"
+                                                    />
                                                 </m:HBox>
 
                                                 <!-- 태그: 재방문 / 웨이팅 -->
@@ -480,19 +602,22 @@
                                                         text="{= ${detailReview>revisit} ? '재방문 의사 있음' : '재방문 의사 없음' }"
                                                         state="{= ${detailReview>revisit} ? 'Success' : 'Error' }"
                                                         inverted="true"
-                                                        class="reviewTag"/>
+                                                        class="reviewTag"
+                                                    />
                                                     <m:ObjectStatus
                                                         text="{= ${detailReview>waiting} ? '웨이팅 있음' : '웨이팅 없음' }"
                                                         state="{= ${detailReview>waiting} ? 'Warning' : 'Information' }"
                                                         inverted="true"
-                                                        class="reviewTag"/>
+                                                        class="reviewTag"
+                                                    />
                                                 </m:HBox>
 
                                                 <m:Text
                                                     text="메뉴 : {detailReview>menuId}"
                                                     visible="{= !!${detailReview>menuId} }"
                                                     wrapping="true"
-                                                    class="summaryMenu"/>
+                                                    class="summaryMenu"
+                                                />
 
                                                 <!-- 사진 (이미지 경로가 있을 때만 표시) -->
                                                 <m:Image
@@ -501,7 +626,8 @@
                                                     width="50%"
                                                     height="180px"
                                                     densityAware="false"
-                                                    class="reviewImage"/>
+                                                    class="reviewImage"
+                                                />
 
                                                 <!-- 리뷰 내용 (비어 있으면 숨김) -->
                                                 <m:Text
