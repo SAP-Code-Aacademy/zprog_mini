@@ -15,8 +15,6 @@ sap.ui.define([
             var aRestaurant = oRestaurantModel.getProperty("/Restaurant");
             var aReview = this.getOwnerComponent().getModel("review").getProperty("/Review");
 
-            // console.log(aRestaurant);
-            // console.log(aReview);
             //평균값 구하려고 mSum 만든 뒤 각 가게 평점 합친값 / 개수 구해옴
             var mSum = {};
             for (var i = 0; i < aReview.length; i++) {
@@ -28,15 +26,12 @@ sap.ui.define([
                 mSum[oReview.id].sum += Number(oReview.scope);
                 mSum[oReview.id].count += 1;
             }
-            //console.log("mSum " , mSum);
 
             var aChart = [];   // 차트용 배열
             //평균 구하기
             for (var j = 0; j < aRestaurant.length; j++) {
                 var oRest = aRestaurant[j];
                 var oData = mSum[oRest.id];
-                // console.log("oRest " , oRest);
-                // console.log("oData " , oData);
 
                 var fAvg = 0;
                 var iCount = 0;
@@ -48,12 +43,8 @@ sap.ui.define([
 
                 oRestaurantModel.setProperty("/Restaurant/" + j + "/avgScope", fAvg);
 
-                //console.log(oRestaurantModel.getData());
-
                 // 차트용 데이터 추가
                 aChart.push({ name: oRest.name, scope: fAvg });
-
-                //console.log("aChart", aChart);
             }
 
             // 차트 전용 모델 //setModel은 모델 형식만 받아 데이터 모양 바꿈
@@ -109,14 +100,6 @@ sap.ui.define([
             console.log(oContext);
             console.log(aButton);
             console.log(oId);
-
-            // let oContext = oEvent.getParameter("listItem").getBindingContext();
-            // let oObject = oContext.getObject();
-            // let oId = oObject.id;
-
-            // console.log(oContext);
-            // console.log(oObject);
-            // console.log(oId);
 
             // //manifest.json에 등록된 Router 정보 가져오기
             const oRouter = this.getOwnerComponent().getRouter();
@@ -282,8 +265,6 @@ sap.ui.define([
             aMenu.splice(iIndex, 1);
             oModel.setProperty("/Menu", aMenu);
 
-         // LocalStorage에 변경된 데이터 저장
-            // localStorage.setItem("menuData", JSON.stringify(oModel.getData()));
         },
 
         onSortChange:function(oEvent) {
@@ -344,6 +325,8 @@ sap.ui.define([
             };
         },
         onReset:function() {
+
+            
             let oTable = this.byId("idProductsTable");
             let oBinding = oTable.getBinding("items");
             let oCombo1 = this.byId("ComboScope");
