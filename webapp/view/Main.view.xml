@@ -56,7 +56,7 @@
 								<header>
                             		<VBox>
 										<Text text="평균 별점" />
-										<ComboBox width="8rem" selectionChange=".onSortChange">
+										<ComboBox width="8rem" selectionChange=".onSortChange" id="ComboScope">
 											<c:Item key="desc" text="별점 높은 순" />
 											<c:Item key="asc" text="별점 낮은 순"/>
 										</ComboBox>
@@ -67,7 +67,7 @@
 								<header>
 									<VBox> 
 										<Text text="거리" />
-										<ComboBox width="8rem" selectionChange=".onSortDistance">
+										<ComboBox width="8rem" selectionChange=".onSortDistance" id="ComboDistance">
 											<c:Item key="Dasc" text="먼 거리 순"/>
 											<c:Item key="Ddesc" text="가까운 거리 순" />
 										</ComboBox>

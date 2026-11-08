@@ -346,6 +346,11 @@ sap.ui.define([
         onReset:function() {
             let oTable = this.byId("idProductsTable");
             let oBinding = oTable.getBinding("items");
+            let oCombo1 = this.byId("ComboScope");
+            let oCombo2 = this.byId("ComboDistance");
+
+            oCombo1.setSelectedKey(null);
+            oCombo2.setSelectedKey(null);
 
             oBinding.sort(null);
         }
