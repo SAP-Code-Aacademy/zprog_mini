@@ -5,242 +5,204 @@
     xmlns:m="sap.m"
     xmlns:layout="sap.ui.layout"
     xmlns:core="sap.ui.core"
-    height="100%">
-
+    height="100%"
+>
     <ObjectPageLayout
         id="ObjectPageLayout"
         showTitleInHeaderContent="true"
         useIconTabBar="true"
-        class="customObjectPage border"
+        class="customObjectPage"
         upperCaseAnchorBar="false"
+        headerContentPinnable="false"
         showAnchorBar="true"
-        enableLazyLoading="false">
-
+        enableLazyLoading="false"
+    >
         <!-- ================================================== -->
         <!-- 상단 제목 -->
         <!-- ================================================== -->
 
-        
         <headerTitle>
             <ObjectPageDynamicHeaderTitle>
-
                 <expandedHeading>
-                    <m:HBox alignItems="Center">
-                        <core:Icon src="sap-icon://home"/>
-                        <m:Button
-                            icon="sap-icon://nav-back"
-                            type="Transparent"
-                            press="backNav"/>
+                    <m:HBox
+                    >
+                        <m:Image
+                            alt="가게 이미지"
+                            src="{imgUrl}"
+                            width="113px"
+                            height="91px"
+                            class= "resImg"
+                        />
 
-                        <m:Text
-                            text="맛집 상세"
-                            class="detailPageTitle"/>
+                        <m:VBox justifyContent="Center">
+                            <m:Text
+                                text="{name}"
+                                class="detailPageTitle"
+                            />
 
+                            <m:HBox class="">
+                                <m:Text
+                                    text="{category}"
+                                    class="tag"
+                                />
+                                <m:Text
+                                    text="{genre}"
+                                    class="tag"
+                                />
+                            </m:HBox>
+                        </m:VBox>
                     </m:HBox>
                 </expandedHeading>
+                <actions />
 
                 <snappedHeading>
-                    <m:Title
-                        text="{Menu>/name}"/>
+                    <m:HBox
+                    >
+                        <m:Image
+                            alt="가게 이미지"
+                            src="{imgUrl}"
+                            width="113px"
+                            height="91px"
+                            class= "resImg"
+                        />
+
+                        <m:VBox justifyContent="Center">
+                            <m:Text
+                                text="{name}"
+                                class="detailPageTitle"
+                            />
+
+                            <m:HBox class="">
+                                <m:Text
+                                    text="{category}"
+                                    class="tag"
+                                />
+                                <m:Text
+                                    text="{genre}"
+                                    class="tag"
+                                />
+                            </m:HBox>
+                        </m:VBox>
+                    </m:HBox>
                 </snappedHeading>
 
                 <actions>
-
                     <m:Button
-                        text="즐겨찾기"
-                        icon="sap-icon://bookmark"
-                        type="Transparent"/>
+                        text="찜하기"
+                        icon="sap-icon://unfavorite"
+                        id ="idButtonFavorite"
+                        class="actionButton"
+                        type="Transparent"
+                        press="onPressFavorite"
+                    />
+                    <m:Button
+                        text="공유하기"
+                        icon="sap-icon://share-2"
+                        class="actionButton"
+                        id = "idButtonShare"
+                        type = "Transparent"
+                        press= "onPressShare"
 
+                    />
                 </actions>
-
             </ObjectPageDynamicHeaderTitle>
         </headerTitle>
-
 
         <!-- ================================================== -->
         <!-- 가게 상단 정보 -->
         <!-- ================================================== -->
 
         <headerContent>
-
             <m:HBox
-                width="100%"
-                alignItems="Center"
                 justifyContent="SpaceBetween"
-                class="restaurantHeader">
-
-
+                class="restaurantHeader"
+            >
                 <!-- ============================== -->
                 <!-- 가게 이미지 -->
                 <!-- ============================== -->
 
-                <m:VBox width="38%">
-
+                <m:HBox class="gap47px">
                     <m:Image
-                        src="{Menu>/_review/0/image}"
-                        width="100%"
-                        height="250px"
-                        densityAware="false"
-                        decorative="false"
-                        class="restaurantMainImage"/>
-
-                </m:VBox>
-
+                        src="{imgUrl}"
+                        width="466px"
+                        height="282px"
+                        class="restaurantMainImage"
+                    />
+                
 
                 <!-- ============================== -->
                 <!-- 가운데 가게 정보 -->
                 <!-- ============================== -->
 
-                <m:VBox
-                    width="42%"
-                    class="restaurantMainInfo">
-
+                <m:VBox class="restaurantMainInfo" justifyContent="Start" alignItems="Start" gap="11px">
                     <!-- 카테고리 -->
                     <m:HBox
-                        alignItems="Center"
-                        class="categoryBox">
-
-                        <m:ObjectStatus
-                            text="{Menu>Category}"
-                            state="Information"
-                            class="categoryStatus"/>
-
-                        <m:ObjectStatus
-                            text="{Menu>menuGenre}"
-                            state="None"
-                            class="genreStatus"/>
-
+                        class="categoryBox"
+                    >
+                        <m:Text text="{category}" class="categoryText"/>
+                        <m:Image src="../images/VectorRight.png" width="4.5px"/>
+                        <m:Text text="{genre}" class="categoryText"/>
                     </m:HBox>
-
 
                     <!-- 가게 이름 -->
-                    <m:Title
-                        text="{Menu>/name}"
-                        level="H1"
-                        class="restaurantName"/>
+                    <m:Text
+                        text="{name}"
+                        class="restaurantName"
+                    />
 
+                    <!-- 리뷰 별점 -->
+                    <m:HBox class="mainMenuInfo" gap="12px" alignItems="End">
+                        <m:Image src="../images/Rating_star.png" width="35px" height="35px"/>
+                        <m:Text class="ratingText" text="4.5" />
 
-                    <!-- 대표 메뉴 -->
-                    <m:HBox
-                        alignItems="Center"
-                        class="mainMenuInfo">
-
-                        <core:Icon
-                            src="sap-icon://meal"
-                            size="24px"/>
-
-                        <m:Text
-                            text="대표 메뉴"
-                            class="mainMenuLabel"/>
-
-                        <m:Text
-                            text="{Menu>/_review/0/menuName}"
-                            class="mainMenuName"/>
-
+                        <m:Text text="(3개의 리뷰)" class="headerReviewCountText" />
                     </m:HBox>
 
-
-                    <!-- 거리 / 영업시간 / 전화번호 -->
-                    <m:HBox
-                        alignItems="Center"
-                        class="restaurantBasicInfo">
-
-                        <!-- 거리 -->
-                        <m:HBox alignItems="Center">
-
-                            <core:Icon
-                                src="sap-icon://map"
-                                size="18px"/>
-
-                            <m:Text
-                                text="{Menu>distance}m"/>
-
-                        </m:HBox>
-
-
-                        <m:Text text="|" class="infoDivider"/>
-
-
-                        <!-- 영업시간 -->
-                        <m:HBox alignItems="Center">
-
-                            <core:Icon
-                                src="sap-icon://history"
-                                size="18px"/>
-
-                            <m:Text
-                                text="{Menu>/_review/0/open}"/>
-
-                        </m:HBox>
-
-
-                        <m:Text text="|" class="infoDivider"/>
-
-
-                        <!-- 전화번호 -->
-                        <m:HBox alignItems="Center">
-
-                            <core:Icon
-                                src="sap-icon://call"
-                                size="18px"/>
-
-                            <m:Text
-                                text="{Menu>/_review/0/number}"/>
-
-                        </m:HBox>
-
-                    </m:HBox>
-
-
-                    <!-- 영업 중 -->
-                    <m:ObjectStatus
-                        text="영업 중"
-                        state="Success"
-                        class="openStatus"/>
-
-                </m:VBox>
-
-
-                <!-- ============================== -->
-                <!-- 즐겨찾기 -->
-                <!-- ============================== -->
-
-                <m:VBox
-                    width="15%"
-                    alignItems="End">
-
+                    <m:HBox gap="14px">
                     <m:Button
-                        text="즐겨찾기"
-                        icon="sap-icon://bookmark"
-                        type="Default"
-                        class="favoriteButton"/>
+                        text="찜하기"
+                        icon="sap-icon://unfavorite"
+                        id ="idButtonFavorit2e"
+                        class="actionButton"
+                        type="Transparent"
+                    />
+                    <m:Button
+                        text="공유하기"
+                        icon="sap-icon://share-2"
+                        class="actionButton"
+                        id = "idButtonShare2"
+                        type = "Transparent"
 
+                    />
+                    </m:HBox>
                 </m:VBox>
+                </m:HBox>
+                <!-- ============================== -->
+                <!-- 지도 -->
+                <!-- ============================== -->
 
+                <m:VBox>
+                    <m:Text text="hello" />
+                </m:VBox>
             </m:HBox>
-
         </headerContent>
-
 
         <!-- ================================================== -->
         <!-- 정보 -->
         <!-- ================================================== -->
 
         <sections>
-
             <ObjectPageSection
                 id="infoSection"
                 title="가게 정보"
-                titleUppercase="false">
-
+                titleUppercase="false"
+            >
                 <subSections>
-
                     <ObjectPageSubSection
                         title="가게 기본 정보"
-                        titleUppercase="false">
-
+                        titleUppercase="false"
+                    >
                         <blocks>
-
                             <m:HBox
                                 class="infoReviewContainer"
                                 justifyContent="Center"
@@ -248,51 +210,47 @@
                                 width="100%">
 
                                 <!-- 왼쪽 : 가게 정보 -->
-                                <m:Panel
-                                    class="infoPanel">
-
+                                <m:Panel class="infoPanel">
                                     <m:VBox>
-
                                         <m:Title
                                             text="가게 기본 정보"
-                                            level="H2"/>
+                                            level="H2"
+                                        />
 
                                         <m:HBox class="infoDetailRow">
-                                            <m:Label text="카테고리 : "/>
-                                            <m:Text text="{category}"/>
+                                            <m:Label text="카테고리 : " />
+                                            <m:Text text="{category}" />
                                         </m:HBox>
 
                                         <m:HBox class="infoDetailRow">
-                                            <m:Label text="대표 음식 : "/>
-                                            <m:Text text="{signatureMenu}"/>
+                                            <m:Label text="대표 음식 : " />
+                                            <m:Text text="{signatureMenu}" />
                                         </m:HBox>
 
                                         <m:HBox class="infoDetailRow imageRow">
                                             <m:Image
                                                 src="{imgUrl}"
                                                 width="300px"
-                                                height="200px"/>
+                                                height="200px"
+                                            />
                                         </m:HBox>
 
                                         <m:HBox class="infoDetailRow">
-                                            <m:Label text="거리 : "/>
-                                            <m:Text text="{distance}km"/>
+                                            <m:Label text="거리 : " />
+                                            <m:Text text="{distance}km" />
                                         </m:HBox>
 
                                         <m:HBox class="infoDetailRow">
-                                            <m:Label text="영업시간 : "/>
-                                            <m:Text text="{open} ~ {close}"/>
+                                            <m:Label text="영업시간 : " />
+                                            <m:Text text="{open} ~ {close}" />
                                         </m:HBox>
 
                                         <m:HBox class="infoDetailRow">
-                                            <m:Label text="전화번호 : "/>
-                                            <m:Text text="{phoneNumber}"/>
+                                            <m:Label text="전화번호 : " />
+                                            <m:Text text="{phoneNumber}" />
                                         </m:HBox>
-
                                     </m:VBox>
-
                                 </m:Panel>
-
 
                                 <!-- 오른쪽 : 리뷰 / 별점 -->
                                 <m:Panel class="reviewSummaryPanel">
@@ -342,20 +300,12 @@
                                         </m:List>
 
                                     </m:VBox>
-
                                 </m:Panel>
-
                             </m:HBox>
-
                         </blocks>
-
                     </ObjectPageSubSection>
-
                 </subSections>
-
             </ObjectPageSection>
-
-
 
             <!-- ================================================== -->
             <!-- 메뉴 -->
@@ -364,35 +314,33 @@
             <ObjectPageSection
                 id="menuSection"
                 title="메뉴"
-                titleUppercase="false">
-
+                titleUppercase="false"
+            >
                 <subSections>
-
                     <ObjectPageSubSection
                         title="메뉴"
-                        titleUppercase="false">
-
+                        titleUppercase="false"
+                    >
                         <blocks>
-
                             <m:VBox
                                 width="100%"
-                                class="menuContainer">
-
+                                class="menuContainer"
+                            >
                                 <!-- 메뉴 제목 -->
                                 <m:HBox
                                     alignItems="Center"
-                                    class="menuHeader">
-
+                                    class="menuHeader"
+                                >
                                     <core:Icon
                                         src="sap-icon://meal"
-                                        size="25px"/>
+                                        size="25px"
+                                    />
 
                                     <m:Title
                                         text="메뉴"
-                                        level="H2"/>
-
+                                        level="H2"
+                                    />
                                 </m:HBox>
-
 
                                 <!-- 메뉴 카드 -->
                                 <layout:Grid
@@ -410,36 +358,29 @@
                                             src="{imgUrl}"
                                             width="100%"
                                             height="160px"
-                                            densityAware="false"/>
-
+                                            densityAware="false"
+                                        />
 
                                         <!-- 메뉴 이름 -->
                                         <m:Title
                                             text="{name}"
                                             level="H3"
-                                            class="menuName"/>
-
+                                            class="menuName"
+                                        />
 
                                         <!-- 가격 -->
                                         <m:Title
                                             text="{price}원"
                                             level="H3"
-                                            class="menuPrice"/>
-
+                                            class="menuPrice"
+                                        />
                                     </m:VBox>
-
                                 </layout:Grid>
-
                             </m:VBox>
-
                         </blocks>
-
                     </ObjectPageSubSection>
-
                 </subSections>
-
             </ObjectPageSection>
-
 
             <!-- ================================================== -->
             <!-- 리뷰 -->
@@ -448,16 +389,14 @@
             <ObjectPageSection
                 id="reviewSection"
                 title="리뷰"
-                titleUppercase="false">
-
+                titleUppercase="false"
+            >
                 <subSections>
-
                     <ObjectPageSubSection
                         title="리뷰 요약"
-                        titleUppercase="false">
-
+                        titleUppercase="false"
+                    >
                         <blocks>
-
                             <m:HBox
                                 width="100%"
                                 justifyContent="SpaceBetween">
@@ -523,26 +462,17 @@
                                                     text="{detailReview>content}"
                                                     visible="{= !!${detailReview>content} }"
                                                     wrapping="true"
-                                                    class="reviewText"/>
-
+                                                    class="reviewText"
+                                                />
                                             </m:VBox>
                                         </m:CustomListItem>
-
                                     </m:List>
                                 </m:VBox>
-
                             </m:HBox>
-
                         </blocks>
-
                     </ObjectPageSubSection>
-
                 </subSections>
-
             </ObjectPageSection>
-
         </sections>
-
     </ObjectPageLayout>
-
 </mvc:View>
