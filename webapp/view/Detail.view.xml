@@ -92,16 +92,14 @@
                         icon="sap-icon://unfavorite"
                         id ="idButtonFavorite"
                         class="actionButton"
-                        type="Transparent"
-                        press="onPressFavorite"
+                        press=".onPressFavorite"
                     />
                     <m:Button
                         text="공유하기"
                         icon="sap-icon://share-2"
                         class="actionButton"
                         id = "idButtonShare"
-                        type = "Transparent"
-                        press= "onPressShare"
+                        press= ".onPressShare"
 
                     />
                 </actions>
@@ -167,6 +165,7 @@
                         icon="sap-icon://unfavorite"
                         id ="idButtonFavorit2e"
                         class="actionButton"
+                        press=".onPressFavorite"
                         type="Transparent"
                     />
                     <m:Button
@@ -175,6 +174,7 @@
                         class="actionButton"
                         id = "idButtonShare2"
                         type = "Transparent"
+                        press="onPressShare"
 
                     />
                     </m:HBox>
