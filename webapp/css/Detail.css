@@ -10,13 +10,16 @@
     border: 1px solid red;
 }
 /* Detail Page ObjectPageLayout IconBar에 아이콘 추가용*/
-/* .customObjectPage .sapMITHTextContent::before {
-    font-family: "SAP-icons";
-    content: "\e070";
-    margin-right: 8px;
-    font-size: 28px;
+.customObjectPage .sapMITHTextContent {
+    font-size: 23px;
+    font-weight: 500;
 }
 
+.customObjectPage .sapMITHTextContent::before {
+    font-size: 23px;
+    font-weight: 700;
+}
+/* 
 .customObjectPage .sapMITBFilter:nth-child(2) .sapMITHTextContent::before {
     content: "\e0d5";
 }
@@ -27,17 +30,33 @@
 
 /* 텝바 영역 */
 /* 탭 아이콘 */
-.customObjectPage .sapUxAPAnchorBar .sapMBtnIcon {
-    font-size: 50px !important;
+.customObjectPage .sapMITBSelectItemIcon::before {
+    font-size: 28px;
+    color: #48515E;
+
 }
 
 /* 탭 글자 */
 .customObjectPage .sapUxAPAnchorBar .sapMBtnContent {
     font-size: 50px !important;
-    font-weight: 70;
+    font-weight: 700;
+    color: #48515E;
 }
 
+/* 탭바  */
+.customObjectPage .sapMITBItem  {
+    padding: 0 40px;
+}
 
+/* 탭바 간 간격 늘리기  */
+.customObjectPage .sapMITBFilterWrapper {
+    padding: 0 40px;
+}
+
+/* 탭바와 상단 HeaderContent 간의 간격 */
+.customObjectPage .sapMITBHead{
+    margin-top: 44px;
+}
 
 
 /* 상단 헤더 */
