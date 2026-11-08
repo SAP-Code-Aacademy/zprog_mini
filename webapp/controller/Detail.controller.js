@@ -1,10 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/ui/model/json/JSONModel"
-], (Controller,JSONModel) => {
+    "sap/ui/model/json/JSONModel",
+    "zprogmini/model/formatter"
+], (Controller,JSONModel, formatter) => {
     "use strict";
 
     return Controller.extend("zprogmini.controller.Detail", {
+        formatter : formatter,
+        
         onInit() {
             const oRouter = this.getOwnerComponent().getRouter();
 
@@ -38,6 +41,8 @@ sap.ui.define([
              let newReview = new JSONModel(reviewFind)
              this.getView().setModel(newReview,"detailReview");
 
+             const ab =  this.getView().getModel("detailReview").getData();
+             console.log(ab);
         },
 
         backNav : function(){
@@ -45,6 +50,18 @@ sap.ui.define([
 
             // Router 중에서, RouterDetail로 이동
             oRouter.navTo("RouteMain");
+        },
+
+
+        // 찜하기
+        onPressFavorite(){
+
+        },
+
+
+        // 공유하기
+        onPressShare(){
+
         }
     });
 });

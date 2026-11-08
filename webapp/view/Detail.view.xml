@@ -153,9 +153,12 @@
                     <!-- 리뷰 별점 -->
                     <m:HBox class="mainMenuInfo" gap="12px" alignItems="End">
                         <m:Image src="../images/Rating_star.png" width="35px" height="35px"/>
-                        <m:Text class="ratingText" text="4.5" />
+                        <m:Text class="ratingText" text="{
+                            path: 'detailReview>/',
+                            formatter: '.formatter.averageRating'
+                        }" />
 
-                        <m:Text text="(3개의 리뷰)" class="headerReviewCountText" />
+                        <m:Text text="{= '(' + ${detailReview>/}.length + '개의 리뷰)'}" class="headerReviewCountText" />
                     </m:HBox>
 
                     <m:HBox gap="14px">
