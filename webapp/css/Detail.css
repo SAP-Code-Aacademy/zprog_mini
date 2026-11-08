@@ -14,10 +14,98 @@
     font-family: "SAP-icons";
     content: "\e070";
     margin-right: 8px;
-    font-size: 32px;
-    color: red;
+    font-size: 28px;
 }
 
 .customObjectPage .sapMITBFilter:nth-child(2) .sapMITHTextContent::before {
-    content: "\e0b1";
+    content: "\e0d5";
+}
+
+.customObjectPage .sapMITBFilter:nth-child(3) .sapMITHTextContent::before {
+    content: "\e0ab";
+}
+
+/* 상단 헤더 */
+
+
+.resImg{
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.detailPageTitle{
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.tag{
+    font-size: 18px;
+    line-height: 1.4;
+    background-color: #EEF1F5;
+    margin-right: 10px;
+    margin-top: 5px;
+    color: #3D4550;
+    padding: 1px 12px;
+    border-radius: 12px;
+}
+
+.actionButton {
+    border : 1px solid #CDD3DC;
+    border-radius : 12px;
+    color : #08090A;
+}
+
+.restaurantMainImage{
+    border-radius: 16px;
+}
+
+.gap47px{
+    gap:47px
+}
+
+.categoryBox{
+    gap: 10px;
+}
+
+.categoryText{
+    color: #505968;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.restaurantName{
+    color:#08090A;
+    font-size : 34px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.ratingText{
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 1.4;
+    color: #08090A;
+}
+
+.headerReviewCountText{
+    font-size: 20px;
+    color: #08090A;
+    line-height: 1.4;
+}
+
+.sapMITHTextContent{
+    font-size: 18px;
+    margin-left: 14px;
+    align-items: center;
+}
+
+.restaurantHeader {
+    border-top: 1px solid #DFE5EB;
+    padding-top: 17px;
+}
+
+.restaurantMainInfo{
+    border-right: 1px solid #DFE5EB;
+    padding-right: 47px;
 }
