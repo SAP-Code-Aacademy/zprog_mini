@@ -522,8 +522,12 @@
                                         <m:Image
                                             src="{imgUrl}"
                                             width="100%"
-                                            height="160px"
+                                            height="320px"
+                                            class="radius16"
                                             densityAware="false"
+                                            mode="Background"
+                                            backgroundSize="cover"
+                                            backgroundPosition="center"
                                         />
 
                                         <!-- 메뉴 이름 -->
