@@ -53,13 +53,9 @@ sap.ui.define(
         const aRestaurants = oModel.getProperty("/Restaurant");
 
         const iRestaurantId = Number(sRestaurantId);
-<<<<<<< Updated upstream
-
-=======
         // 현재 상세 화면의 식당 ID 저장
         this._iRestaurantId = iRestaurantId;
         
->>>>>>> Stashed changes
         const iIndex = aRestaurants.findIndex(
           (oItem) => oItem.id === iRestaurantId,
         );
