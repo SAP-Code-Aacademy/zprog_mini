@@ -92,11 +92,11 @@
                         <Column hAlign="Center">
                             <header>
                                 <VBox>
-                                    <Text text="평균 별점" />
                                     <ComboBox
                                         width="8rem"
                                         selectionChange=".onSortChange"
                                         id="ComboScope"
+                                        placeholder="평균 별점"
                                     >
                                         <c:Item
                                             key="desc"
@@ -113,11 +113,11 @@
                         <Column hAlign="Center">
                             <header>
                                 <VBox>
-                                    <Text text="거리" />
                                     <ComboBox
                                         width="8rem"
                                         selectionChange=".onSortDistance"
                                         id="ComboDistance"
+                                        placeholder="거리"
                                     >
                                         <c:Item
                                             key="Dasc"
