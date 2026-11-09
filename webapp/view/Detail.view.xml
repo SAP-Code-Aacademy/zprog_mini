@@ -34,6 +34,7 @@
                             mode="Background"
                             backgroundPosition="center"
                             backgroundSize="cover"
+                            press="backNav"
                         />
 
                         <m:VBox justifyContent="Center">
