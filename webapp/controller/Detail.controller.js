@@ -32,6 +32,7 @@ sap.ui.define(
           backgroundSize: "cover",
           backgroundPosition: "center",
         });
+        oResImage.addStyleClass("restaurantMainImage");
         oCarousel.insertPage(oResImage, 0);
         oCarousel.setActivePage(oCarousel.getPages()[0].getId());
       },
