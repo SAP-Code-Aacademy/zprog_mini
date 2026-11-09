@@ -236,7 +236,32 @@ sap.ui.define([
             // Dialog 닫기
             oEvent.getSource().getParent().close();
         },
+        onFileChange: function (oEvent) {
 
+            // 1. 사용자가 선택한 파일 가져오기
+            let oFile = oEvent.getParameter("files")[0];
+
+            if (!oFile) {
+                return;
+            }
+
+            // 2. FileReader 객체 생성
+            let oReader = new FileReader();
+
+            // 3. 파일 읽기가 완료되면 실행
+            oReader.onload = (oEvent) => {
+
+                // 4. 읽은 이미지 데이터를 dialog 모델에 저장
+                this.getView().getModel("dialog")
+                    .setProperty("/image", oEvent.target.result);
+
+                console.log("저장된 이미지 데이터:",
+                    this.getView().getModel("dialog").getProperty("/image"));
+            };
+
+            // 5. 선택한 이미지 파일을 Data URL 형식으로 읽기
+            oReader.readAsDataURL(oFile);
+        },
         onSelect: function (oEvent) {
             console.log("========onSelect=======")
 
