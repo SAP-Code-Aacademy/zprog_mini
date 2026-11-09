@@ -101,15 +101,15 @@
         "imgUrl": "../images/후후카츠_가게사진.jpg" ,
         "phoneNumber" :  "0507-1370-4750",
         "Menu" : [
-            { "id" : 0, "name" :"치킨모듬카츠", "price" : 16500, "imgUrl" : "../images/후후카츠_치킨모듬카츠.jpg"},
-            { "id" : 1, "name" :"치즈모듬카츠", "price" : 16500, "imgUrl" : "../images/후후카츠_치즈모듬카츠.jpg"},
-            { "id" : 2, "name" :"상등심카츠", "price" : 16000, "imgUrl" : "../images/후후카츠_상등심카츠.jpg"},
-            { "id" : 3, "name" :"등안심카츠", "price" : 14000, "imgUrl" : "../images/후후카츠_등안심카츠.jpg"},
-            { "id" : 4, "name" :"등심카츠", "price" : 13000, "imgUrl" : "../images/후후카츠_등심카츠.jpg"},
-            { "id" : 5, "name" :"안심카츠", "price" : 4000, "imgUrl" : "../images/후후카츠_안심카츠.jpg"},
-            { "id" : 6, "name" :"한입소바", "price" : 3000, "imgUrl" : "../images/후후카츠_안심카츠.jpg"},
-            { "id" : 7, "name" :"한입카레", "price" : 2500, "imgUrl" : "../images/후후카츠_안심카츠.jpg"},
-            { "id" : 8, "name" :"치즈카츠(2P)", "price" : 4000, "imgUrl" : "../images/후후카츠_안심카츠.jpg"}
+            { "id" : 0, "name" :"치킨모듬카츠", "price" : 16500, "imgUrl" : "../images/후후카츠_치킨모듬카츠.png"},
+            { "id" : 1, "name" :"치즈모듬카츠", "price" : 16500, "imgUrl" : "../images/후후카츠_치즈모듬카츠.png"},
+            { "id" : 2, "name" :"상등심카츠", "price" : 16000, "imgUrl" : "../images/후후카츠_상등심카츠.png"},
+            { "id" : 3, "name" :"등안심카츠", "price" : 14000, "imgUrl" : "../images/후후카츠_등안심카츠.png"},
+            { "id" : 4, "name" :"등심카츠", "price" : 13000, "imgUrl" : "../images/후후카츠_등심카츠.png"},
+            { "id" : 5, "name" :"안심카츠", "price" : 4000, "imgUrl" : "../images/후후카츠_안심카츠.png"},
+            { "id" : 6, "name" :"한입소바", "price" : 3000, "imgUrl" : "../images/후후카츠_한입소바.jpg"},
+            { "id" : 7, "name" :"한입카레", "price" : 2500, "imgUrl" : "../images/후후카츠_한입카레.jpg"},
+            { "id" : 8, "name" :"치즈카츠(2P)", "price" : 4000, "imgUrl" : "../images/후후카츠_치즈카츠(2P).jpg"}
             
         ]}
 
