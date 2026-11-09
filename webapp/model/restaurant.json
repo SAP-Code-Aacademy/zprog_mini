@@ -89,7 +89,29 @@
             { "id" : 43, "name" :"황태해장국","price" : 8000,"imgUrl" : "../images/우리순대국_황태해장국.jpg"},
             { "id" : 44,"name" :"뼈해장국","price" : 9000,"imgUrl" : "../images/우리순대국_뼈해장국.jpg"}
        ]
-    }
+    },
+     {"id" : 5,
+        "name" : "후후카츠",
+        "signatureMenu" : "치킨모카츠",
+        "distance" : 0.15 ,
+        "category" : "일식",
+        "genre" : "돈까스",
+        "open" : "11:30",
+        "close" : "21:00",
+        "imgUrl": "../images/후후카츠_가게사진.jpg" ,
+        "phoneNumber" :  "0507-1370-4750",
+        "Menu" : [
+            { "id" : 0, "name" :"치킨모듬카츠", "price" : 16500, "imgUrl" : "../images/후후카츠_치킨모듬카츠.jpg"},
+            { "id" : 1, "name" :"치즈모듬카츠", "price" : 16500, "imgUrl" : "../images/후후카츠_치즈모듬카츠.jpg"},
+            { "id" : 2, "name" :"상등심카츠", "price" : 16000, "imgUrl" : "../images/후후카츠_상등심카츠.jpg"},
+            { "id" : 3, "name" :"등안심카츠", "price" : 14000, "imgUrl" : "../images/후후카츠_등안심카츠.jpg"},
+            { "id" : 4, "name" :"등심카츠", "price" : 13000, "imgUrl" : "../images/후후카츠_등심카츠.jpg"},
+            { "id" : 5, "name" :"안심카츠", "price" : 4000, "imgUrl" : "../images/후후카츠_안심카츠.jpg"},
+            { "id" : 6, "name" :"한입소바", "price" : 3000, "imgUrl" : "../images/후후카츠_안심카츠.jpg"},
+            { "id" : 7, "name" :"한입카레", "price" : 2500, "imgUrl" : "../images/후후카츠_안심카츠.jpg"},
+            { "id" : 8, "name" :"치즈카츠(2P)", "price" : 4000, "imgUrl" : "../images/후후카츠_안심카츠.jpg"}
+            
+        ]}
 
 ]
 }
