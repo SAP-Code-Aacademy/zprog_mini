@@ -12,7 +12,7 @@
 /* Detail Page ObjectPageLayout IconBar에 아이콘 추가용*/
 .customObjectPage .sapMITHTextContent {
     font-size: 23px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .customObjectPage .sapMITHTextContent::before {
