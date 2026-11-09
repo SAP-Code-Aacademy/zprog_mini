@@ -126,16 +126,24 @@
                 <!-- ============================== -->
 
                 <m:HBox class="gap47px">
-                    <m:Image
-                        src="{imgUrl}"
+                    <m:Carousel
+                        id="idCarousel"
                         width="466px"
                         height="282px"
-                        class="restaurantMainImage"
-                        mode="Background"
-                        backgroundSize="cover"
-                        backgroundPosition="center"
-                    />
-
+                        showPageIndicator="false"
+                        loop="true"
+                        pages="{Menu}"
+                    >
+                        <m:Image
+                            src="{imgUrl}"
+                            width="466px"
+                            height="282px"
+                            class="restaurantMainImage"
+                            mode="Background"
+                            backgroundSize="cover"
+                            backgroundPosition="center"
+                        />
+                    </m:Carousel>
                     <!-- ============================== -->
                     <!-- 가운데 가게 정보 -->
                     <!-- ============================== -->

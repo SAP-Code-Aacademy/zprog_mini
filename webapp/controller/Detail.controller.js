@@ -3,13 +3,32 @@ sap.ui.define(
     "sap/ui/core/mvc/Controller",
     "sap/ui/model/json/JSONModel",
     "zprogmini/model/formatter",
-    "sap/m/MessageToast"
+    "sap/m/MessageToast",
   ],
   (Controller, JSONModel, formatter, MessageToast) => {
     "use strict";
 
     return Controller.extend("zprogmini.controller.Detail", {
       formatter: formatter,
+
+      // HeaderContent 영역에 있는 이미지 슬라이더의 0번째에 가게 사진 추가
+      _insertPageToCarousel(path) {
+        const sImgPath = path + "/imgUrl";
+        const imgSrc = this.getOwnerComponent()
+          .getModel()
+          .getProperty(sImgPath);
+
+        console.log(sImgPath);
+        const oCarousel = this.byId("idCarousel");
+        const oResImage = new sap.m.Image({
+          src: imgSrc,
+          width: "466px",
+          height: "282px",
+          mode: "Background",
+          backgroundSize: "cover",
+        });
+        oCarousel.insertPage(oResImage, 0);
+      },
 
       onInit() {
         const oRouter = this.getOwnerComponent().getRouter();
@@ -27,7 +46,7 @@ sap.ui.define(
         const aRestaurants = oModel.getProperty("/Restaurant");
 
         const iRestaurantId = Number(sRestaurantId);
-        
+
         const iIndex = aRestaurants.findIndex(
           (oItem) => oItem.id === iRestaurantId,
         );
@@ -53,7 +72,7 @@ sap.ui.define(
         // Location에서 해당 Restaurants 찾기
         const oLocationModel = this.getOwnerComponent().getModel("location");
         const aLocations = oLocationModel.getProperty("/Location");
-        
+
         const iLocationIndex = aLocations.findIndex(
           (oItem) => oItem.restaurantID === iRestaurantId,
         );
@@ -61,9 +80,11 @@ sap.ui.define(
         console.log(aLocations[iLocationIndex]);
 
         this.byId("idVBoxlocationInfo").bindElement({
-              path: `/Location/${iLocationIndex}`,
-              model: "location"
-            });
+          path: `/Location/${iLocationIndex}`,
+          model: "location",
+        });
+
+        this._insertPageToCarousel(sPath);
       },
 
       backNav: function () {
