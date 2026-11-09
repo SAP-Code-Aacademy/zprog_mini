@@ -233,7 +233,7 @@ sap.ui.define([
 
             // 모델에 변경된 데이터 반영
             // oModel.setProperty("/Review", aReview);
-            oModel.setProperty("/Review",oNewReview);
+            oModel.setProperty("/Review", aReview);
             console.log("2 : " , oModel);
             // Dialog 닫기
             oEvent.getSource().getParent().close();
