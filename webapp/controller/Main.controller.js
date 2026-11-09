@@ -336,6 +336,13 @@ sap.ui.define([
             oCombo2.setSelectedKey(null);
 
             oBinding.sort(null);
+        },
+        onFavoriteButton:function(oEvent) {
+            const context = oEvent.getSource().getBindingContext();
+            const model = context.getModel();
+            const path = context.getPath() + "/isFavorite";
+
+            model.setProperty(path,!model.getProperty(path));
         }
 
     });
