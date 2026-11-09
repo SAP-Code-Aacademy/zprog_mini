@@ -206,12 +206,15 @@ sap.ui.define([
         },
 
         onSave: function (oEvent) {
-            let oModel = this.getView().getModel();
+            console.log("==========onSave==========")
+            var oModel = this.getOwnerComponent().getModel("review");
+
+            // let oModel = this.getView().getModel();
             let oData = this.getView().getModel("dialog").getData();
 
             // 기존 Review 배열 가져오기 / 빈값이면 빈 배열로 시
             let aReview = oModel.getProperty("/Review") || [];
-
+            console.log("1 : " , aReview);
             // 새로운 Review 객체 만들기
             let oNewReview = {
                 // id: Math.max(0, ...aReview.map(item => item.id)) + 1,
@@ -229,8 +232,9 @@ sap.ui.define([
             aReview.push(oNewReview);
 
             // 모델에 변경된 데이터 반영
-            oModel.setProperty("/Review", aReview);
-
+            // oModel.setProperty("/Review", aReview);
+            oModel.setProperty("/Review",oNewReview);
+            console.log("2 : " , oModel);
             // Dialog 닫기
             oEvent.getSource().getParent().close();
         },
