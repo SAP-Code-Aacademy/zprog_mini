@@ -139,7 +139,7 @@
                         <ColumnListItem vAlign="Middle">
                             <cells>
                                 <c:Icon
-                                    src="{= !!${isFavorite} ? 'sap-icon://favorite' : 'sap-icon://add-favorite'}"
+                                    src="{= !!${favorite} ? 'sap-icon://favorite' : 'sap-icon://add-favorite'}"
                                     press=".onFavorite"
                                 />
                                 <Text text="{name}" />

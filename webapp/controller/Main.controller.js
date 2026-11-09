@@ -320,16 +320,16 @@ sap.ui.define([
         },
         onFavorite: function (oEvent) {
             let oIcon = oEvent.getSource();
-            let oSrc = oIcon.getSrc();
 
-            if (oSrc === "sap-icon://add-favorite") {
-                oIcon.setSrc("sap-icon://favorite");
-            } else {
-                oIcon.setSrc("sap-icon://add-favorite");
-            };
+            let oContext = oIcon.getBindingContext();
+            let sPath = oContext.getPath();
+            let oModel = oContext.getModel();
+
+            let bFavorite = oModel.getProperty(sPath + "/favorite");
+
+            oModel.setProperty(sPath + "/favorite", !bFavorite);
         },
         onReset: function () {
-
 
             let oTable = this.byId("idProductsTable");
             let oBinding = oTable.getBinding("items");
@@ -342,12 +342,24 @@ sap.ui.define([
             oBinding.sort(null);
         },
         onFavoriteButton:function(oEvent) {
-            const context = oEvent.getSource().getBindingContext();
-            const model = context.getModel();
-            const path = context.getPath() + "/isFavorite";
+            let oTable = this.byId("idProductsTable");
+            let oBinding = oTable.getBinding("items");
 
-            model.setProperty(path,!model.getProperty(path));
+            // 현재 필터 상태 확인
+            this.bFavoriteFilter = !this.bFavoriteFilter;
+
+            if (this.bFavoriteFilter) {
+
+                let oFilter = new sap.ui.model.Filter(
+                    "favorite",
+                    sap.ui.model.FilterOperator.EQ, 
+                    true
+                );
+
+                oBinding.filter([oFilter]);
+                } else {
+                    oBinding.filter([]);
+            };
         }
-
     });
 });
