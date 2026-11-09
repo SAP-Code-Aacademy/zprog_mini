@@ -325,9 +325,9 @@ sap.ui.define([
             let sPath = oContext.getPath();
             let oModel = oContext.getModel();
 
-            let bFavorite = oModel.getProperty(sPath + "/favorite");
+            let bFavorite = oModel.getProperty(sPath + "/isFavorite");
 
-            oModel.setProperty(sPath + "/favorite", !bFavorite);
+            oModel.setProperty(sPath + "/isFavorite", !bFavorite);
         },
         onReset: function () {
 
@@ -351,7 +351,7 @@ sap.ui.define([
             if (this.bFavoriteFilter) {
 
                 let oFilter = new sap.ui.model.Filter(
-                    "favorite",
+                    "isFavorite",
                     sap.ui.model.FilterOperator.EQ, 
                     true
                 );
