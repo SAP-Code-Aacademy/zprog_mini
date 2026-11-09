@@ -651,7 +651,7 @@
                                                     src="{detailReview>imgUrl}"
                                                     visible="{= !!${detailReview>imgUrl} }"
                                                     width="50%"
-                                                    height="180px"
+                                                    height="240px"
                                                     densityAware="false"
                                                     class="reviewImage"
                                                 />
