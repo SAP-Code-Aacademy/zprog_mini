@@ -14,18 +14,23 @@ sap.ui.define(
       // HeaderContent 영역에 있는 이미지 슬라이더의 0번째에 가게 사진 추가
       _insertPageToCarousel(path) {
         const sImgPath = path + "/imgUrl";
-        const imgSrc = this.getOwnerComponent()
-          .getModel()
-          .getProperty(sImgPath);
+
+        this.imgSrc = this.getOwnerComponent().getModel().getProperty(sImgPath);
 
         console.log(sImgPath);
         const oCarousel = this.byId("idCarousel");
+
+        // 이미지 페이지가 생성된 경우,
+        if (this.imgSrc) {
+          oCarousel.removePage(0);
+        }
         const oResImage = new sap.m.Image({
-          src: imgSrc,
+          src: this.imgSrc,
           width: "466px",
           height: "282px",
           mode: "Background",
           backgroundSize: "cover",
+          backgroundPosition: "center",
         });
         oCarousel.insertPage(oResImage, 0);
       },
