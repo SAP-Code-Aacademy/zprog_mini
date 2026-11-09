@@ -91,44 +91,40 @@
                         </Column>
                         <Column hAlign="Center">
                             <header>
-                                <VBox>
-                                    <ComboBox
-                                        width="8rem"
-                                        selectionChange=".onSortChange"
-                                        id="ComboScope"
-                                        placeholder="평균 별점"
-                                    >
-                                        <c:Item
-                                            key="desc"
-                                            text="별점 높은 순"
-                                        />
-                                        <c:Item
-                                            key="asc"
-                                            text="별점 낮은 순"
-                                        />
-                                    </ComboBox>
-                                </VBox>
+                                <ComboBox
+                                    width="8rem"
+                                    selectionChange=".onSortChange"
+                                    id="ComboScope"
+                                    placeholder="평균 별점"
+                                >
+                                    <c:Item
+                                        key="desc"
+                                        text="별점 높은 순"
+                                    />
+                                    <c:Item
+                                        key="asc"
+                                        text="별점 낮은 순"
+                                    />
+                                </ComboBox>
                             </header>
                         </Column>
                         <Column hAlign="Center">
                             <header>
-                                <VBox>
-                                    <ComboBox
-                                        width="8rem"
-                                        selectionChange=".onSortDistance"
-                                        id="ComboDistance"
-                                        placeholder="거리"
-                                    >
-                                        <c:Item
-                                            key="Dasc"
-                                            text="먼 거리 순"
-                                        />
-                                        <c:Item
-                                            key="Ddesc"
-                                            text="가까운 거리 순"
-                                        />
-                                    </ComboBox>
-                                </VBox>
+                                <ComboBox
+                                    width="8rem"
+                                    selectionChange=".onSortDistance"
+                                    id="ComboDistance"
+                                    placeholder="거리"
+                                >
+                                    <c:Item
+                                        key="Dasc"
+                                        text="먼 거리 순"
+                                    />
+                                    <c:Item
+                                        key="Ddesc"
+                                        text="가까운 거리 순"
+                                    />
+                                </ComboBox>
                             </header>
                         </Column>
                         <Column hAlign="Center">
