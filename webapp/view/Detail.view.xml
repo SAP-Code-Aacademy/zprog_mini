@@ -598,7 +598,6 @@
                                     <m:List
                                         id="idReviewList"
                                         items="{detailReview>/}"
-                                        mode="SingleSelectMaster"
                                         showSeparators="None"
                                         backgroundDesign="Transparent"
                                         noDataText="아직 작성된 리뷰가 없습니다"
