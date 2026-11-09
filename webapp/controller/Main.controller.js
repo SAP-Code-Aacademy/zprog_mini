@@ -219,6 +219,10 @@ sap.ui.define([
             let oNewReview = {
                 // id: Math.max(0, ...aReview.map(item => item.id)) + 1,
                 id: Number(oData.restaurantId), //가져온 레스토랑 메뉴 id로 저장 변경
+                reviewId: Math.max(
+                0,
+                ...aReview.map(item => Number(item.reviewId) || 0)
+                ) + 1,
                 date: oData.Date,
                 menuId: oData.menuId,
                 revisit: oData.revisitIndex === 0,

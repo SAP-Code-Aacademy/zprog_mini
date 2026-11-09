@@ -2,6 +2,7 @@
     "Review" :  [
 	    {
               "id": 0,
+              "reviewId": 0,
               "date" : "2026-02-10:12:30:43",
               "menuId" : "짜장면",
               "revisit" : true,
@@ -12,6 +13,7 @@
 	    },
         {
               "id": 0,
+              "reviewId": 1,
               "date" : "2026-06-14:13:40:23",
               "menuId" : "짬뽕",
               "revisit" : false,
@@ -22,6 +24,7 @@
 	    },
         {
               "id": 1,
+              "reviewId": 2,
               "date" : "2026-10-11:12:20:27",
               "menuId" : "한우나주곰탕",
               "revisit" : true,
@@ -32,6 +35,7 @@
 	    },
         {
               "id": 2,
+              "reviewId": 3,
               "date" : "2026-04-16:12:33:57",
               "menuId" : "통돼지찌개",
               "revisit" : true,
@@ -42,6 +46,7 @@
 	    },
         {
               "id": 4,
+              "reviewId": 4,
               "date" : "2026-06-21:12:15:03",
               "menuId" : "뼈해장국",
               "revisit" : true,
@@ -52,6 +57,7 @@
 	    },
         {
               "id": 4,
+              "reviewId": 5,
               "date" : "2026-07-21:12:03:22",
               "menuId" : "순대국",
               "revisit" : true,
@@ -62,6 +68,7 @@
 	    },
         {
               "id": 4,
+              "reviewId": 6,
               "date" : "2026-06-22:11:55:52",
               "menuId" : "한우소머리국밥",
               "revisit" : true,
@@ -72,6 +79,7 @@
 	    },
         {
               "id": 1,
+              "reviewId": 7,
               "date" : "2026-10-31:12:30:50",
               "menuId" : "한우나주곰탕",
               "revisit" : true,
@@ -82,6 +90,7 @@
 	    },
         {
               "id": 2,
+              "reviewId": 8,
               "date" : "2025-12-30:13:13:27",
               "menuId" : "통돼지찌개",
               "revisit" : false,
@@ -92,6 +101,7 @@
     	},
         {
               "id": 3,
+              "reviewId": 9,
               "date" : "2026-10-22:11:59:27",
               "menuId" : "한돈꽃목살",
               "revisit" : true,
@@ -102,6 +112,7 @@
     	},
         {
               "id": 3,
+              "reviewId": 10,
               "date" : "2026-07-10:19:29:22",
               "menuId" : "한우1등급갈비살",
               "revisit" : true,
@@ -112,6 +123,7 @@
     	},
         {
               "id": 0,
+              "reviewId": 11,
               "date" : "2026-04-10:11:53:52",
               "menuId" : "등심탕수육(소)",
               "revisit" : true,
@@ -122,6 +134,7 @@
     	},
         {
               "id": 4,
+              "reviewId": 12,
               "date" : "2026-06-22:11:55:52",
               "menuId" : "한우소머리국밥",
               "revisit" : true,
@@ -132,6 +145,7 @@
 	    },
 {
               "id": 0,
+              "reviewId": 13,
               "date" : "2026-06-22:11:55:52",
               "menuId" : "군만두",
               "revisit" : true,
@@ -142,6 +156,7 @@
 	    },
           {
               "id": 0,
+              "reviewId": 14,
               "date" : "2026-06-22:11:55:52",
               "menuId" : "양장피",
               "revisit" : true,
@@ -152,6 +167,7 @@
 	    },
           {
               "id": 1,
+              "reviewId": 15,
               "date" : "2026-06-22:11:55:52",
               "menuId" : "낙지한마리파전",
               "revisit" : false,
@@ -162,6 +178,7 @@
 	    },
           {
               "id": 3,
+              "reviewId": 16,
               "date" : "2026-06-22:11:55:52",
               "menuId" : "한돈쫄깃가브리살",
               "revisit" : true,
@@ -172,6 +189,7 @@
 	    },
            {
               "id": 2,
+              "reviewId": 17,
               "date" : "2026-04-16:12:33:57",
               "menuId" : "통돼지볶음",
               "revisit" : true,
@@ -182,6 +200,7 @@
 	    },
            {
               "id": 2,
+              "reviewId": 18,
               "date" : "2026-04-16:12:33:57",
               "menuId" : "삼겹살",
               "revisit" : true,
@@ -192,6 +211,7 @@
 	    },
           {
               "id": 3,
+              "reviewId": 19,
               "date" : "2026-07-10:19:29:22",
               "menuId" : "한돈아삭항정살",
               "revisit" : true,
@@ -202,6 +222,7 @@
     	},
       {
               "id": 3,
+              "reviewId": 20,
               "date" : "2026-07-16:12:13:54",
               "menuId" : "제육",
               "revisit" : true,
@@ -212,6 +233,7 @@
 	    },
            {
               "id": 5,
+              "reviewId": 21,
               "date" : "2026-08-18:17:30:11",
               "menuId" : "치킨모듬카츠",
               "revisit" : true,
@@ -222,6 +244,7 @@
 	    },
           {
               "id": 5,
+              "reviewId": 22,
               "date" : "2026-09-09:12:13:54",
               "menuId" : "상등심카츠",
               "revisit" : true,
@@ -232,6 +255,7 @@
 	    },
           {
               "id": 5,
+              "reviewId": 23,
               "date" : "2026-10-09:15:23:11",
               "menuId" : "치킨모듬카츠",
               "revisit" : true,

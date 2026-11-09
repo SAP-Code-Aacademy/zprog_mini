@@ -596,7 +596,9 @@
                                     class="reviewContentPanel"
                                 >
                                     <m:List
+                                        id="idReviewList"
                                         items="{detailReview>/}"
+                                        mode="SingleSelectMaster"
                                         showSeparators="None"
                                         backgroundDesign="Transparent"
                                         noDataText="아직 작성된 리뷰가 없습니다"
@@ -675,6 +677,12 @@
                                                     visible="{= !!${detailReview>content} }"
                                                     wrapping="true"
                                                     class="reviewText"
+                                                />
+                                                <m:Button
+                                                    text="선택한 리뷰 삭제"
+                                                    icon="sap-icon://delete"
+                                                    type="Reject"
+                                                    press=".onDeleteReview"
                                                 />
                                             </m:VBox>
                                         </m:CustomListItem>

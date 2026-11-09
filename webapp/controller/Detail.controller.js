@@ -53,7 +53,13 @@ sap.ui.define(
         const aRestaurants = oModel.getProperty("/Restaurant");
 
         const iRestaurantId = Number(sRestaurantId);
+<<<<<<< Updated upstream
 
+=======
+        // 현재 상세 화면의 식당 ID 저장
+        this._iRestaurantId = iRestaurantId;
+        
+>>>>>>> Stashed changes
         const iIndex = aRestaurants.findIndex(
           (oItem) => oItem.id === iRestaurantId,
         );
@@ -139,6 +145,54 @@ sap.ui.define(
           console.error(error);
         }
       },
+      onDeleteReview: function () {
+
+            console.log("삭제 함수 실행됨!");
+
+            // 1. 사용자가 선택한 리뷰 가져오기
+            let oList = this.byId("idReviewList");
+            let oSelectedItem = oList.getSelectedItem();
+
+            // 선택한 리뷰가 없다면 종료
+            if (!oSelectedItem) {
+                MessageToast.show("삭제할 리뷰를 선택해주세요.");
+                return;
+            }
+
+            // 2. 선택한 리뷰의 실제 데이터 가져오기
+            let oSelectedReview = oSelectedItem
+                .getBindingContext("detailReview")
+                .getObject();
+            console.log("선택한 리뷰 데이터:", oSelectedReview);
+            console.log("선택한 리뷰의 reviewId:", oSelectedReview.reviewId);
+
+
+            // 3. 전체 리뷰 데이터가 들어 있는 review 모델 가져오기
+            let oReviewModel = this.getOwnerComponent().getModel("review");
+            let aReview = oReviewModel.getProperty("/Review");
+
+            // 4. 선택한 리뷰의 reviewId와 일치하는 데이터 찾기
+            let iIndex = aReview.findIndex(function (item) {
+                return item.reviewId === oSelectedReview.reviewId;
+            });
+
+            // 5. 해당 리뷰 삭제
+            if (iIndex !== -1) {
+                aReview.splice(iIndex, 1);
+                oReviewModel.setProperty("/Review", aReview);
+
+                // 6. 현재 화면의 리뷰 목록도 갱신
+                let aDetailReview = aReview.filter(function (item) {
+                    return item.id === this._iRestaurantId;
+                }.bind(this));
+
+                this.getView()
+                    .getModel("detailReview")
+                    .setData(aDetailReview);
+
+                MessageToast.show("리뷰가 삭제되었습니다.");
+            }
+      }
     });
   },
 );
