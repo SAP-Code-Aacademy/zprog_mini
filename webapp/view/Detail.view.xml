@@ -182,9 +182,9 @@
                             />
                         </m:HBox>
                         <m:Text
-                                text="{detailReview>/0/content}"
-                                class="fontSize20"
-                            />
+                            text="{detailReview>/0/content}"
+                            class="fontSize20"
+                        />
                         <m:HBox gap="14px">
                             <m:Button
                                 text="찜하기"
@@ -501,17 +501,7 @@
                                 <m:HBox
                                     alignItems="Center"
                                     class="menuHeader"
-                                >
-                                    <core:Icon
-                                        src="sap-icon://meal"
-                                        size="25px"
-                                    />
-
-                                    <m:Title
-                                        text="메뉴"
-                                        level="H2"
-                                    />
-                                </m:HBox>
+                                />
 
                                 <!-- 메뉴 카드 -->
                                 <layout:Grid
