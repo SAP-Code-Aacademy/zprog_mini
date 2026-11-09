@@ -39,6 +39,14 @@
       "longitude": 126.898933252251,
       "roadAddress": "서울특별시 구로구 디지털로32가길 25",
       "transportInfo": "구로디지털단지역 2번 출구에서 도보 약 8분"
+    },
+    {
+      "restaurantID": 5,
+      "name": "후후카츠",
+      "latitude": 37.4818296,
+      "longitude": 126.8997747,
+      "roadAddress": "서울특별시 구로구 디지털로32다길 23",
+      "transportInfo": "구로디지털단지역 2번 출구에서 도보 약 8분"
     }
   ]
 }
