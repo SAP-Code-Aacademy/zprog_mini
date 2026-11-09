@@ -33,7 +33,7 @@ sap.ui.define(
           backgroundPosition: "center",
         });
         oCarousel.insertPage(oResImage, 0);
-        setActivePage(0);
+        oCarousel.previous();
       },
 
       onInit() {
