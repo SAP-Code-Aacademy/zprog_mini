@@ -66,6 +66,10 @@
                             width="113px"
                             height="91px"
                             class="resImg"
+                            mode="Background"
+                            backgroundPosition="center"
+                            backgroundSize="cover"
+                            press="backNav"
                         />
 
                         <m:VBox justifyContent="Center">
