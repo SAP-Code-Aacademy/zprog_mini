@@ -1,5 +1,3 @@
-/* detail  파일에서 사용할 CSS */
-
 /* background 색 테스트 용 */
 .red {
     background-color: red;
@@ -61,7 +59,7 @@
 
 /* 탭바 아이템  */
 .customObjectPage .sapMITBItem  {
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 /* 탭바 간 간격 늘리기  */
@@ -145,7 +143,7 @@
 }
 
 .sapMITHTextContent{
-    font-size: 18px;
+    font-size: 18px !important;
     margin-left: 14px;
     align-items: center;
 }
