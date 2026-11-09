@@ -335,7 +335,7 @@ sap.ui.define([
             }
 
             //리스트 필터 적용
-            let oFilter = new Filter("name", FilterOperator.EQ, listId);
+            let oFilter = new Filter("name", FilterOperator.Contains, listId);
 
             //테이블에 리스트 적용
             oTableList.getBinding("items").filter(oFilter);
