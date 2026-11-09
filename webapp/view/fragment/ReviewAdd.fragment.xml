@@ -32,7 +32,7 @@
                             text="{name}" /> <!-- 저장시 아이디가 아닌 name으롭 변경 -->
                     </ComboBox>
                     <Label text="별점"/>
-                    <RatingIndicator id="idRI" maxValue="5" class="sapUiSmallMarginBottom" value="0" tooltip="Rating Tooltip" />
+                    <RatingIndicator id="idRI" maxValue="5" class="sapUiSmallMarginBottom" value="{dialog>/scope}" tooltip="Rating Tooltip" />
                     <Label text="재방문의사"/>
                     <RadioButtonGroup
                         id="idRevisitGroup"

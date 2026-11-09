@@ -218,7 +218,7 @@ sap.ui.define([
             // 새로운 Review 객체 만들기
             let oNewReview = {
                 // id: Math.max(0, ...aReview.map(item => item.id)) + 1,
-                id: oData.id, //가져온 레스토랑 메뉴 id로 저장 변경
+                id: Number(oData.restaurantId), //가져온 레스토랑 메뉴 id로 저장 변경
                 date: oData.Date,
                 menuId: oData.menuId,
                 revisit: oData.revisitIndex === 0,
@@ -230,11 +230,9 @@ sap.ui.define([
 
             // 기존 Review 배열에 새로운 리뷰 추가
             aReview.push(oNewReview);
-
             // 모델에 변경된 데이터 반영
             // oModel.setProperty("/Review", aReview);
             oModel.setProperty("/Review", aReview);
-            console.log("2 : " , oModel);
             // Dialog 닫기
             oEvent.getSource().getParent().close();
         },
